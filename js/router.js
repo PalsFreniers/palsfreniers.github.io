@@ -7,7 +7,7 @@ export class Router {
     }
     handleRoute() {
         const route = window.location.pathname;
-        if (!this.routes.has(route)) {
+        if (!(route in this.routes)) {
             console.warn(`unable to find route ${route}`);
             this.warp('/404');
         }
