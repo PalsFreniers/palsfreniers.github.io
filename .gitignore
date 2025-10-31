@@ -2,3 +2,5 @@ ts
 tsconfig.json
 deploy.sh
 index.scss
+main.js
+!js/main.js
