@@ -4,3 +4,5 @@ deploy.sh
 index.scss
 main.js
 !js/main.js
+require.js
+!js/require.js
