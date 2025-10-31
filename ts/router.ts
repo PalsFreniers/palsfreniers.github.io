@@ -1,7 +1,7 @@
 import { Page } from './page.js';
 
 export class Router {
-        routes: Map<string, Page>;
+        routes: Map<string, Page> = new Map();
 
         constructor() {
 
