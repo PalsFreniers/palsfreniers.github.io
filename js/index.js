@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var router_js_1 = require("./router.js");
+var index_js_1 = require("./pages/index.js");
+var errors_js_1 = require("./pages/errors.js");
+var nav = new router_js_1.Router();
+nav.add('/', index_js_1.Index);
+nav.add('/home', index_js_1.Index);
+nav.add('/404', errors_js_1.E404);
+nav.warp('/');
