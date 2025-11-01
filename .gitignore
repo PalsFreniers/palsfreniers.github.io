@@ -1,7 +1,7 @@
 ts
 tsconfig.json
 deploy.sh
-index.scss
+scss
 main.js
 !js/main.js
 require.js
