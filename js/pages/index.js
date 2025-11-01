@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Page } from '../page.js';
 export const Index = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield fetch("https://palsfreniers.42web.io/api/index.php", {
+    const res = yield fetch("https://render-api-p27p.onrender.com/api/message", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
