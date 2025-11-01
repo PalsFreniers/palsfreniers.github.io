@@ -8,10 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { Page } from '../page.js';
-import { Header } from '../component/header.js';
-export const Index = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+export const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
-        ${Header.make()}
-        <p>test2</p>
+        <header>
+                <ul>
+                        <li>home</li>
+                        <li>test</li>
+                </ul>
+        </header>
         `;
 }));
