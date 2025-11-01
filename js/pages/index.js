@@ -11,7 +11,7 @@ import { Page } from '../page.js';
 import { Header } from '../component/header.js';
 export const Index = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
-        ${Header.make()}
+        ${yield Header.make()}
         <p>test2</p>
         `;
 }));
