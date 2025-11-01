@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { Page } from '../page.js';
 export const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
-        <header>
+        <header class="main-header">
                 <ul>
                         <li>home</li>
                         <li>test</li>
