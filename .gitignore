@@ -6,3 +6,4 @@ main.js
 !js/main.js
 require.js
 !js/require.js
+css/*.map
