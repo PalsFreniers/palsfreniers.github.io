@@ -19,6 +19,7 @@ body {
   list-style-type: none;
   overflow: hidden;
   display: flex;
+  gap: 10px;
   height: 50px;
 }
 .nav-bar ul a {
@@ -29,6 +30,7 @@ body {
   text-decoration: none;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 .nav-bar ul a:hover {
   background-color: #2E2E3C;
