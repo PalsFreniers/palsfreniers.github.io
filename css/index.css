@@ -26,6 +26,14 @@ body {
   font-size: 40pt;
 }
 
+.projects-header {
+  margin: 2.5%;
+  font-size: 40pt;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .nav-bar {
   background-color: #303050;
   color: #FFF9D9;
