@@ -20,7 +20,7 @@ body {
   overflow: hidden;
   display: flex;
   gap: 10px;
-  padding: 20px 10px;
+  padding: 10px 10px;
   align-items: center;
 }
 .nav-bar ul a {
