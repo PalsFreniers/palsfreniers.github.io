@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export class Router {
+class Router {
     constructor() {
         this.routes = new Map();
     }
@@ -43,3 +43,4 @@ export class Router {
         });
     }
 }
+export default Router;

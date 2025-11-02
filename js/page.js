@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export class Page {
+class Page {
     constructor(maker) {
         this.dom = maker;
     }
@@ -17,3 +17,4 @@ export class Page {
         });
     }
 }
+export default Page;

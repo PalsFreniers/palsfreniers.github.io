@@ -11,12 +11,14 @@ import Page from '../page.js';
 import Header from '../component/header.js';
 import FaceNameTitle from '../component/face-name.js';
 import * as textContent from '../content/texts.js';
-const Index = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+const Contact = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
         ${yield Header.make()}
         ${yield FaceNameTitle.make()}
-        <p class="context-text whoami">${textContent.whoami[lang]}</p>
+        <p class="context-text phone">${textContent.phoneLabel[lang]}: ${textContent.phone[lang]}</p>
+        <p class="context-text mail">${textContent.mailLabel[lang]}: ${textContent.mail[lang]}</p>
+        <p class="context-text address">${textContent.addressLabel[lang]}: ${textContent.address[lang]}</p>
         `;
 }));
-export default Index;
+export default Contact;

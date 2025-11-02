@@ -7,9 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Page } from '../page.js';
+import Page from '../page.js';
 import * as textContent from "../content/texts.js";
-export const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
         <header class="nav-bar">
@@ -21,3 +21,4 @@ export const Header = new Page(() => __awaiter(void 0, void 0, void 0, function*
         </header>
         `;
 }));
+export default Header;

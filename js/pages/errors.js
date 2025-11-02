@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Page } from '../page.js';
+import Page from '../page.js';
 export const E404 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
         <h1>404 not found</h1>

@@ -11,6 +11,21 @@ body {
   border-radius: 3rem;
 }
 
+.context-text {
+  padding-left: 5%;
+}
+
+.index-title {
+  display: flex;
+  flex-direction: row;
+  margin: 2.5%;
+}
+.index-title .name-title {
+  align-content: center;
+  padding-left: 2.5%;
+  font-size: 40pt;
+}
+
 .nav-bar {
   background-color: #303050;
   color: #FFF9D9;
