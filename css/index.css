@@ -15,12 +15,12 @@ body {
   padding-left: 5%;
 }
 
-.index-title {
+.face-name-title {
   display: flex;
   flex-direction: row;
   margin: 2.5%;
 }
-.index-title .name-title {
+.face-name-title .name-title {
   align-content: center;
   padding-left: 2.5%;
   font-size: 40pt;

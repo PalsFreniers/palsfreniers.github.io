@@ -12,7 +12,7 @@ import * as textContent from '../content/texts.js';
 const FaceNameTitle = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
-        <div class="index-title>
+        <div class="face-name-title">
                 <img class="portrait" alt="image of my face" src="images/photo.png" />
                 <h1 class="name-title">${textContent.name[lang]}</h1>
         </div>
