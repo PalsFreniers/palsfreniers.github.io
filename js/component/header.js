@@ -22,3 +22,15 @@ const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
         `;
 }));
 export default Header;
+/*
+ * <script>
+function abc(selectedguy) {
+  var x = document.getElementById("mySelect");
+alert(x.options[selectedguy].text);
+}
+</script>
+
+<select id="mySelect" onchange="abc(this.selectedIndex);">
+<option>option one</option>
+<option>option two</option>
+</select>*/
