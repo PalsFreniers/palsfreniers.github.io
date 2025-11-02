@@ -26,7 +26,7 @@ body {
 .nav-bar ul a {
   display: flex;
   height: 80%;
-  padding: 0px 20px;
+  padding: 10px 20px;
   border-radius: 3rem;
   color: #FFF9D9;
   text-decoration: none;
