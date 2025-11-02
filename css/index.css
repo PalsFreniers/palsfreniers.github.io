@@ -11,23 +11,24 @@ body {
   border-radius: 50px;
 }
 
-.main-header {
+.nav-bar {
   background-color: #303050;
   color: #FFF9D9;
 }
-.main-header ul {
+.nav-bar ul {
   list-style-type: none;
   overflow: hidden;
-  display: block;
-  text-align: center;
-}
-.main-header ul li {
-  margin: auto;
-  float: left;
-  width: 100px;
+  display: flex;
   height: 50px;
 }
-.main-header ul li:hover {
+.nav-bar ul a {
+  display: flex;
+  width: 100px;
+  height: 100%;
+  color: #FFF9D9;
+  text-decoration: none;
+}
+.nav-bar ul a:hover {
   background-color: #2E2E3C;
 }
 
