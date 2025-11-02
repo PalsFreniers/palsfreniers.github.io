@@ -12,6 +12,7 @@ import { Header } from '../component/header.js';
 export const Index = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
         ${yield Header.make()}
-        <p>test2</p>
+        <img class="portrait" alt="image visage" src="images/photo.png" />
+        <h1 class="name-title">Tidian DELAGE</h1>
         `;
 }));

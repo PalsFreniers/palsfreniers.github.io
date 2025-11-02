@@ -7,6 +7,10 @@ body {
   background-color: #F0F0FF;
 }
 
+.protrait {
+  border-radius: 50px;
+}
+
 .main-header {
   background-color: #303050;
   color: #FFF9D9;
