@@ -12,8 +12,8 @@ export const Header = new Page(() => __awaiter(void 0, void 0, void 0, function*
     return `
         <header class="main-header">
                 <ul>
-                        <li>home</li>
-                        <li>test</li>
+                        <a href="/home" data-link><li>home</li></a>
+                        <a href="/404" data-link><li>test</li></a>
                 </ul>
         </header>
         `;
