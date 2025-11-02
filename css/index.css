@@ -7,10 +7,6 @@ body {
   background-color: #F0F0FF;
 }
 
-.portrait {
-  border-radius: 3rem;
-}
-
 .context-text {
   padding-left: 5%;
   padding-bottom: 10px;
@@ -20,6 +16,9 @@ body {
   display: flex;
   flex-direction: row;
   margin: 2.5%;
+}
+.face-name-title .portrait {
+  border-radius: 3rem;
 }
 .face-name-title .name-title {
   align-content: center;
