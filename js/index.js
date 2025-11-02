@@ -15,15 +15,14 @@ nav.add('/', Index);
 nav.add('/home', Index);
 nav.add('/404', E404);
 window.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, void 0, function* () {
-    document.body.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target.matches('a[data-link]')) {
+    document.getElementsByName('a').forEach((val) => {
+        val.addEventListener('click', (e) => {
             e.preventDefault();
-            const url = target.getAttribute('href');
+            const url = val.getAttribute('href');
             if (url) {
                 nav.warp(url);
             }
-        }
+        });
     });
     window.addEventListener('popstate', () => {
         nav.warp();
