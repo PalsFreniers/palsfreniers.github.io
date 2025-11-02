@@ -5,4 +5,7 @@ const nav = new Router();
 nav.add('/', Index);
 nav.add('/home', Index);
 nav.add('/404', E404);
+if (!localStorage.getItem("lang")) {
+    localStorage.setItem("lang", "fr");
+}
 nav.warp();

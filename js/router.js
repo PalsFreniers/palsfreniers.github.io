@@ -32,7 +32,6 @@ export class Router {
             const links = document.getElementsByTagName('a');
             for (let i = 0; i < links.length; i++) {
                 const val = links[i];
-                console.log(val);
                 val.addEventListener('click', (e) => {
                     e.preventDefault();
                     const url = val.getAttribute('href');

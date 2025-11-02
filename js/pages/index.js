@@ -9,10 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Page } from '../page.js';
 import { Header } from '../component/header.js';
+import * as textContent from '../content/texts.js';
 export const Index = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+    const lang = localStorage.getItem("lang") || "fr";
     return `
         ${yield Header.make()}
-        <img class="portrait" alt="image visage" src="images/photo.png" />
-        <h1 class="name-title">Tidian DELAGE</h1>
+        <img class="portrait" alt="image of my face" src="images/photo.png" />
+        <h1 class="name-title">${textContent.name[lang]}</h1>
+        <p class="whoami">${textContent.whoami[lang]}</p>
         `;
 }));

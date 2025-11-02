@@ -8,13 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { Page } from '../page.js';
+import * as textContent from "../content/texts.js";
 export const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+    const lang = localStorage.getItem("lang") || "fr";
     return `
         <header class="main-header">
                 <ul>
-                        <a href="/home"><li>Home</li></a>
-                        <a href="/projects"><li>Projects</li></a>
-                        <a href="/contact"><li>Contact Me</li></a>
+                        <a href="/home"><li>${textContent.home[lang]}</li></a>
+                        <a href="/projects"><li>${textContent.projects[lang]}</li></a>
+                        <a href="/contact"><li>${textContent.contact[lang]}</li></a>
                 </ul>
         </header>
         `;
