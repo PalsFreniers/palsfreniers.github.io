@@ -14,9 +14,12 @@ export class Router {
     add(route, page) {
         this.routes[route] = page;
     }
-    handleRoute() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const route = window.location.pathname;
+    warp() {
+        return __awaiter(this, arguments, void 0, function* (route = null) {
+            if (!route) {
+                this.warp('/');
+                return;
+            }
             if (!(route in this.routes)) {
                 console.warn(`unable to find route ${route}`);
                 this.warp('/404');
@@ -26,13 +29,6 @@ export class Router {
             if (app == null)
                 return;
             app.innerHTML = DOM;
-        });
-    }
-    warp() {
-        return __awaiter(this, arguments, void 0, function* (route = null) {
-            if (route)
-                history.pushState(null, '', route);
-            this.handleRoute();
         });
     }
 }

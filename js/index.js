@@ -24,8 +24,5 @@ window.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, void
             }
         });
     });
-    window.addEventListener('popstate', () => {
-        nav.warp();
-    });
     nav.warp();
 }));
