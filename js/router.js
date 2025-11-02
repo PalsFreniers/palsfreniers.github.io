@@ -29,6 +29,18 @@ export class Router {
             if (app == null)
                 return;
             app.innerHTML = DOM;
+            const links = document.getElementsByTagName('a');
+            for (let i = 0; i < links.length; i++) {
+                const val = links[i];
+                console.log(val);
+                val.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = val.getAttribute('href');
+                    if (url) {
+                        this.warp(url);
+                    }
+                });
+            }
         });
     }
 }
