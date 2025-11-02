@@ -13,7 +13,7 @@ export const whoami = makeLangText("Bonjour, je suis Tidian Delage et je suis en
 // contact
 export const phoneLabel = makeLangText("Numéro de Téléphone", "Phone Number");
 export const phone = makeLangText("0766564819");
-export const mailLabel = makeLangText("Adresse E-mail", "E-mail address");
+export const mailLabel = makeLangText("Adresse E-mail", "E-mail Address");
 export const mail = makeLangText("tidian.delage@protonmail.ch");
 export const addressLabel = makeLangText("Adresse Postale", "Postal Address");
 export const address = makeLangText("131 rue de périgueux 16000 Angoulême");
