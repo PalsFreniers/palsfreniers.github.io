@@ -20,13 +20,13 @@ body {
   overflow: hidden;
   display: flex;
   gap: 10px;
-  height: 50px;
+  padding: 20px 10px;
   align-items: center;
 }
 .nav-bar ul a {
   display: flex;
-  width: 100px;
   height: 80%;
+  padding: 0px 20px;
   border-radius: 3rem;
   color: #FFF9D9;
   text-decoration: none;
