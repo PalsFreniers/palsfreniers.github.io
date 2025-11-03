@@ -15,6 +15,7 @@ const Projects = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     const test = yield fetch(`${projectsURL}progs.json`, {
         method: 'GET',
+        mode: 'no-cors',
         headers: {
             "Content-Type": "application/json"
         }
