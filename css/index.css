@@ -44,18 +44,22 @@ body {
   background-color: #909099;
 }
 .project-list .project .project-header {
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
 }
 .project-list .project .project-header img {
   width: 100px;
   height: 100px;
-  border-radius: 3rem;
+  border-radius: 1rem;
 }
 .project-list .project .project-header .project-name {
   font-size: 25pt;
   align-content: center;
   padding-left: 2.5%;
+}
+.project-list .project .project-brief {
+  padding: 10px 0px;
 }
 
 .nav-bar {
