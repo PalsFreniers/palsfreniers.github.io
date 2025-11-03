@@ -85,9 +85,17 @@ body {
 .project-entry .project-entry-description {
   padding: 2.5%;
 }
+.project-entry .project-entry-carousel .project-entry-carousel {
+  padding: 10px;
+  text-decoration: underline;
+}
 .project-entry .project-entry-carousel .project-entry-carousel-imgs {
   display: flex;
   flex-direction: row;
+  gap: 5px;
+}
+.project-entry .project-entry-carousel .project-entry-carousel-imgs img {
+  display: none;
 }
 
 .nav-bar {

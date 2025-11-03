@@ -29,7 +29,10 @@ function makeProjectTitle(lang, prog) {
 }
 function makeCarousel(project, prog) {
     return __awaiter(this, void 0, void 0, function* () {
-        let ret = '<div class="project-entry-carousel"><h3 class="project-entry-carousel">Images</h3><div class="project-entry-carousel-imgs">';
+        let ret = `
+        <div class="project-entry-carousel">
+                <h3 class="project-entry-carousel">Images</h3>
+                <div class="project-entry-carousel-imgs">`;
         for (let i = 0; i < project.images.length; i++) {
             ret += `
                 <div class="slide">
