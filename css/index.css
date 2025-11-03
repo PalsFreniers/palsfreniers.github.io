@@ -38,7 +38,8 @@ body {
   margin: 5%;
 }
 .project-list .project {
-  padding: 10px 0px;
+  padding: 10px;
+  border-radius: 1rem;
 }
 .project-list .project:hover {
   background-color: #909099;
