@@ -9,6 +9,7 @@ nav.add('/home', Index);
 nav.add('/404', Errors.E404);
 nav.add('/contact', Contact);
 nav.add('/projects', Projects);
+nav.add('/project', Projects);
 if (!localStorage.getItem("lang")) {
     localStorage.setItem("lang", "fr");
 }

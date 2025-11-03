@@ -20,7 +20,6 @@ function makeProjectList(lang) {
                 "Content-Type": "application/json"
             }
         });
-        console.log(res);
         const projects = yield res.json();
         let ret = '<div class="project-list">';
         for (let proj of projects.projects) {

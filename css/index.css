@@ -64,6 +64,43 @@ body {
   padding: 10px 0px;
 }
 
+.project-entry {
+  margin: 5%;
+}
+.project-entry .project-entry-header {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.project-entry .project-entry-header img {
+  width: 300px;
+  height: 300px;
+  border-radius: 1rem;
+}
+.project-entry .project-entry-header .project-entry-title {
+  font-size: 40pt;
+  align-content: center;
+  padding-left: 2.5%;
+}
+.project-entry .project-entry-description {
+  padding: 2.5%;
+}
+.project-entry .project-entry-carousel ul {
+  width: 100vw;
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  gap: 4vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.project-entry .project-entry-carousel ul li {
+  list-style-type: none;
+  border: 1px solid #D0D0DD;
+  padding: 20px;
+  scroll-snap-align: center;
+}
+
 .nav-bar {
   background-color: #303050;
   color: #FFF9D9;
