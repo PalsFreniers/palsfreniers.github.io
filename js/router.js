@@ -15,7 +15,7 @@ class Router {
         this.routes[route] = page;
     }
     warp() {
-        return __awaiter(this, arguments, void 0, function* (route = null) {
+        return __awaiter(this, arguments, void 0, function* (route = null, arg) {
             if (!route) {
                 this.warp('/');
                 return;
@@ -24,7 +24,7 @@ class Router {
                 console.warn(`unable to find route ${route}`);
                 this.warp('/404');
             }
-            const DOM = yield this.routes[route].make();
+            const DOM = yield this.routes[route].make(arg);
             const app = document.getElementById('app');
             if (app == null)
                 return;
@@ -40,6 +40,7 @@ class Router {
                     }
                 });
             }
+            yield this.routes[route].postMake(arg);
         });
     }
 }

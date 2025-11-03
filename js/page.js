@@ -8,12 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 class Page {
-    constructor(maker) {
+    constructor(maker, postMake) {
         this.dom = maker;
+        this.post = postMake;
     }
-    make() {
+    make(arg) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.dom();
+            return yield this.dom(arg);
+        });
+    }
+    postMake(arg) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.post == undefined)
+                return;
+            yield this.post(arg);
         });
     }
 }
