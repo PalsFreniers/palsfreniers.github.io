@@ -38,7 +38,7 @@ body {
   margin: 5%;
 }
 .project-list .project {
-  margin-left: 10px;
+  margin: 10px 0px;
 }
 .project-list .project:hover {
   background-color: #909099;
