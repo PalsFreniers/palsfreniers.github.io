@@ -34,6 +34,28 @@ body {
   width: 100%;
 }
 
+.project-list {
+  margin: 5%;
+}
+.project-list .project {
+  margin-left: 10px;
+}
+.project-list .project:hover {
+  background-color: #909099;
+}
+.project-list .project .project-header {
+  display: flex;
+  flex-direction: row;
+}
+.project-list .project .project-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 3em;
+}
+.project-list .project .project-header .project-name {
+  font-size: 25pt;
+}
+
 .nav-bar {
   background-color: #303050;
   color: #FFF9D9;
