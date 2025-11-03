@@ -11,13 +11,12 @@ import Page from '../page.js';
 import Header from '../component/header.js';
 import * as textContent from '../content/texts.js';
 import { nav } from '../index.js';
-const projectsURL = 'https://raw.githubusercontent.com/PalsFreniers/webfolio-projects/refs/heads/master';
+const projectsURL = 'https://corsproxy.io/?url=https://raw.githubusercontent.com/PalsFreniers/webfolio-projects/refs/heads/master';
 const projectsFilesURL = `${projectsURL}/progs`;
 function makeProjectList(lang) {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(`${projectsURL}/progs.json`, {
             method: 'GET',
-            mode: 'no-cors',
             headers: {
                 "Content-Type": "application/json"
             }
