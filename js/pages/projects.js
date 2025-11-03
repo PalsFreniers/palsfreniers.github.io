@@ -10,11 +10,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import Page from '../page.js';
 import Header from '../component/header.js';
 import * as textContent from '../content/texts.js';
+const projectsURL = 'https://raw.githubusercontent.com/PalsFreniers/webfolio-projects/refs/heads/master/';
 const Projects = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
+    const test = yield fetch(`${projectsURL}progs.json`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
     return `
         ${yield Header.make()}
         <h1 class="projects-header">${textContent.projectsHeader[lang]}</h1>
+        <p>${test}</p>
         `;
 }));
 export default Projects;
