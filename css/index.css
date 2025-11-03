@@ -85,20 +85,9 @@ body {
 .project-entry .project-entry-description {
   padding: 2.5%;
 }
-.project-entry .project-entry-carousel ul {
-  width: 100vw;
-  height: 300px;
-  padding: 20px;
+.project-entry .project-entry-carousel .project-entry-carousel-imgs {
   display: flex;
-  gap: 4vw;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-}
-.project-entry .project-entry-carousel ul li {
-  list-style-type: none;
-  border: 1px solid #D0D0DD;
-  padding: 20px;
-  scroll-snap-align: center;
+  flex-direction: row;
 }
 
 .nav-bar {
