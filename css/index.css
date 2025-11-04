@@ -92,6 +92,8 @@ body {
 .project-entry .project-entry-carousel .project-entry-carousel-imgs {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  align-items: center;
   gap: 5px;
 }
 
