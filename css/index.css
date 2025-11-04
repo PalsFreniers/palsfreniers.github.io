@@ -91,6 +91,7 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
+  height: 400px;
   gap: 5px;
 }
 .project-entry .project-entry-carousel .project-entry-carousel-title {
