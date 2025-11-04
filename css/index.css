@@ -94,7 +94,13 @@ body {
   flex-direction: row;
   width: 100%;
   align-items: center;
+  height: 200px;
   gap: 5px;
+}
+.project-entry .project-entry-carousel .project-entry-carousel-imgs .slide-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 5rem;
 }
 
 .nav-bar {

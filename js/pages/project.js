@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import Page from '../page.js';
 import Header from '../component/header.js';
 import * as urls from './urls.js';
-function makeProjectTitle(lang, prog) {
+function makeProjectTitle(prog) {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(`${urls.projectsFilesURL}/${prog}/info.json`, {
             method: 'GET',
@@ -62,7 +62,7 @@ const Project = new Page((arg) => __awaiter(void 0, void 0, void 0, function* ()
     return `
         ${yield Header.make()}
         <div class="project-entry">
-                ${yield makeProjectTitle(lang, arg)}
+                ${yield makeProjectTitle(arg)}
                 ${yield makeDescription(lang, arg)}
         </div>
         `;
