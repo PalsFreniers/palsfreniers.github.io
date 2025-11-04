@@ -94,6 +94,7 @@ body {
   flex-direction: row;
   width: 100%;
   align-items: center;
+  justify-content: center;
   height: 200px;
   gap: 5px;
 }
