@@ -28,20 +28,17 @@ function makeProjectTitle(lang, prog) {
     });
 }
 function makeCarousel(project, prog) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let ret = `
+    return `
         <div class="project-entry-carousel" id="carousel">
                 <h3 class="project-entry-carousel">Images</h3>
                 <div class="project-entry-carousel-imgs">
                         <button id="prev-slide" class="prev-slide slide-btn"><</button>
-                        <div class="slide" data-slidenum="0">
+                        <div id="slide" data-slidenum="0">
                                 <img id="carousel-img" alt="${project.images[0]}" src="${urls.githubProjectsFilesURL}/${prog}/images/1.png" />
                         </div>
                         <button id="next-slide" class="next-slide slide-btn">></button>
                 </div>
         </div>`;
-        return ret;
-    });
 }
 function makeDescription(lang, prog) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -56,7 +53,7 @@ function makeDescription(lang, prog) {
         <div class="project-entry-description">
                 ${project.text[lang]}
         </div>
-        ${yield makeCarousel(project, prog)}
+        ${makeCarousel(project, prog)}
         `;
     });
 }
@@ -89,7 +86,7 @@ const Project = new Page((arg) => __awaiter(void 0, void 0, void 0, function* ()
     }
     const slide = document.getElementById('slide');
     if (!slide) {
-        console.error('unable to find next Button');
+        console.error('unable to find slide div');
         return;
     }
     const img = document.getElementById('carousel-img');
