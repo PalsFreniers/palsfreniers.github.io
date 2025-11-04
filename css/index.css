@@ -110,6 +110,7 @@ body {
 .project-entry .project-entry-carousel .project-entry-carousel-imgs #carousel-img {
   max-width: 300px;
   max-height: 300px;
+  border-radius: 1rem;
 }
 .project-entry .project-entry-carousel .project-entry-carousel-imgs .slide-btn {
   width: 25px;
