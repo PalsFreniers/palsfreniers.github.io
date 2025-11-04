@@ -94,7 +94,7 @@ body {
   flex-direction: row;
   gap: 5px;
 }
-.project-entry .project-entry-carousel .project-entry-carousel-imgs img {
+.project-entry .project-entry-carousel .project-entry-carousel-imgs .slide {
   display: none;
 }
 
