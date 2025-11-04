@@ -107,9 +107,9 @@ const Project = new Page((arg) => __awaiter(void 0, void 0, void 0, function* ()
     nextBtn.addEventListener('click', () => {
         const count = project.images.length;
         let currentSlide = parseInt(slide.getAttribute("data-slidenum") || '0');
-        if (currentSlide == count - 1)
-            currentSlide = 0;
         currentSlide++;
+        if (currentSlide == count)
+            currentSlide = 0;
         img.setAttribute('src', `${urls.githubProjectsFilesURL}/${arg}/images/${currentSlide + 1}.png`);
         img.setAttribute('alt', `${project.images[currentSlide]}`);
         slide.setAttribute('data-slidenum', `${currentSlide}`);
