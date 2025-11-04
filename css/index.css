@@ -100,8 +100,10 @@ body {
 .project-entry .project-entry-carousel .project-entry-carousel-imgs {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
   width: 100%;
   align-items: center;
+  justify-content: center;
   height: 200px;
   gap: 5px;
 }
