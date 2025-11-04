@@ -106,10 +106,8 @@ body {
   gap: 5px;
 }
 .project-entry .project-entry-carousel .project-entry-carousel-imgs #carousel-img {
-  width: 50%;
-  height: 50%;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 300px;
+  max-height: 300px;
 }
 .project-entry .project-entry-carousel .project-entry-carousel-imgs .slide-btn {
   width: 25px;
