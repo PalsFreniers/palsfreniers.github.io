@@ -85,7 +85,15 @@ body {
 .project-entry .project-entry-description {
   padding: 2.5%;
 }
-.project-entry .project-entry-carousel .project-entry-carousel {
+.project-entry .project-entry-carousel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.project-entry .project-entry-carousel .project-entry-carousel-title {
   padding: 10px;
   text-decoration: underline;
 }

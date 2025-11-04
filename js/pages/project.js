@@ -30,7 +30,7 @@ function makeProjectTitle(prog) {
 function makeCarousel(project, prog) {
     return `
         <div class="project-entry-carousel" id="carousel">
-                <h3 class="project-entry-carousel">Images</h3>
+                <h3 class="project-entry-carousel-title">Images</h3>
                 <div class="project-entry-carousel-imgs">
                         <button id="prev-slide" class="prev-slide slide-btn"><</button>
                         <div id="slide" data-slidenum="0">
