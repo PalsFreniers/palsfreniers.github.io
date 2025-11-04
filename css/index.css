@@ -94,9 +94,6 @@ body {
   flex-direction: row;
   gap: 5px;
 }
-.project-entry .project-entry-carousel .project-entry-carousel-imgs .slide {
-  display: none;
-}
 
 .nav-bar {
   background-color: #303050;

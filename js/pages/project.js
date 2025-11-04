@@ -37,7 +37,7 @@ function makeCarousel(project, prog) {
                         <div class="slide" data-slidenum="0">
                                 <img id="carousel-img" alt="${project.images[0]}" src="${urls.githubProjectsFilesURL}/${prog}/images/1.png" />
                         </div>
-                        <button id="next-slide" class="next-slide slide-btn"><</button>
+                        <button id="next-slide" class="next-slide slide-btn">></button>
                 </div>
         </div>`;
         return ret;
@@ -94,7 +94,7 @@ const Project = new Page((arg) => __awaiter(void 0, void 0, void 0, function* ()
     }
     const img = document.getElementById('carousel-img');
     if (!img) {
-        console.error('unable to find next Button');
+        console.error('unable to find carousel image');
         return;
     }
     prevBtn.addEventListener('click', () => {
