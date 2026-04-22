@@ -7,11 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import Page from '../page.js';
 import Header from '../component/header.js';
+import { withHeader } from '../component/header.js';
 import FaceNameTitle from '../component/face-name.js';
 import * as textContent from '../content/texts.js';
-const Contact = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+const Contact = withHeader(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
 	${yield Header.make()}

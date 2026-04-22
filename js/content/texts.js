@@ -14,6 +14,8 @@ export const myability = makeLangText("C, C++, Ada, Anglais", "C, C++, Ada, Engl
 export const myfuture = makeLangText("travailler a creer des outils dans l'éducation", "work to create tools in éducation");
 //projects
 export const projectsHeader = makeLangText("Mes Projets", "My Projects");
+export const projectDescTitle = makeLangText("Description");
+export const projectSkillTitle = makeLangText("Compétences", "Skills");
 // contact
 export const phoneLabel = makeLangText("Numéro de Téléphone", "Phone Number");
 export const phone = makeLangText("0766564819");

@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import Page from '../page.js';
+import { nav } from '../index.js';
 import * as textContent from "../content/texts.js";
 const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
@@ -18,19 +19,26 @@ const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
 			<a href="/projects"><li>${textContent.projects[lang]}</li></a>
 			<a href="/contact"><li>${textContent.contact[lang]}</li></a>
 		</ul>
+		<select id="lang-select">
+			<option value="fr" ${lang === "fr" ? "selected" : ""}>🇫🇷 FR</option>
+			<option value="en" ${lang === "en" ? "selected" : ""}>🇬🇧 EN</option></select>
+		</select>
 	</header>
 	`;
 }));
+export function withHeader(maker, postMake) {
+    return new Page(maker, (arg) => __awaiter(this, void 0, void 0, function* () {
+        if (postMake)
+            postMake(arg);
+        const selector = document.getElementById("lang-select");
+        if (!selector)
+            return;
+        selector.addEventListener("change", () => {
+            const lang = selector.value;
+            localStorage.setItem("lang", lang);
+            const state = history.state;
+            nav.warp(state.route, state.arg);
+        });
+    }));
+}
 export default Header;
-/*
- * <script>
- function abc(selectedguy) {
- var x = document.getElementById("mySelect");
- alert(x.options[selectedguy].text);
- }
- </script>
-
- <select id="mySelect" onchange="abc(this.selectedIndex);">
- <option>option one</option>
- <option>option two</option>
- </select>*/

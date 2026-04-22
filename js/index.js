@@ -14,4 +14,6 @@ nav.add('/project', Project);
 if (!localStorage.getItem("lang")) {
     localStorage.setItem("lang", "fr");
 }
-nav.warp();
+requestAnimationFrame(() => {
+    nav.warp();
+});

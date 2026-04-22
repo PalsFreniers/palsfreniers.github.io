@@ -8,26 +8,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { nav } from '../index.js';
-import Page from '../page.js';
 import Header from '../component/header.js';
+import { withHeader } from '../component/header.js';
 import * as urls from './urls.js';
 import * as textContent from '../content/texts.js';
 function makeProjectList(lang) {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(`${urls.projectsURL}/progs.json`, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-        const projects = yield res.json();
+        const projects = yield urls.getJsonGithub('progs.json');
+        console.log(projects);
         let ret = '<div class="project-list">';
         for (let proj of projects.projects) {
             ret += `
 		<hr />
 		<div class="project" id="${proj.file}">
 			<div class="project-header">
-				<img src="${urls.githubProjectsFilesURL}/${proj.file}/miniature.png" />
+				<img src="${urls.getFileUrl(`progs/${proj.file}/miniature.png`)}" />
 				<h3 class="project-name">${proj.name}</h3>
 			</div>
 			<p class="project-brief">${proj.desc[lang]}</p>
@@ -38,7 +33,7 @@ function makeProjectList(lang) {
         return ret;
     });
 }
-const Projects = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+const Projects = withHeader(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
 	${yield Header.make()}
