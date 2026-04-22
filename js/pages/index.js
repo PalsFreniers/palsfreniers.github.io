@@ -14,11 +14,11 @@ import * as textContent from '../content/texts.js';
 const Index = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
-        ${yield Header.make()}
-        ${yield FaceNameTitle.make()}
-        <p class="context-text whoami">${textContent.whoami[lang]}</p>
-        <p class="context-text whoami">${textContent.myability[lang]}</p>
-        <p class="context-text whoami">${textContent.myfuture[lang]}</p>
-        `;
+	${yield Header.make()}
+	${yield FaceNameTitle.make()}
+	<p class="context-text whoami">${textContent.whoami[lang]}</p>
+	<p class="context-text whoami">${textContent.myability[lang]}</p>
+	<p class="context-text whoami">${textContent.myfuture[lang]}</p>
+	`;
 }));
 export default Index;

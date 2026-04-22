@@ -24,15 +24,15 @@ function makeProjectList(lang) {
         let ret = '<div class="project-list">';
         for (let proj of projects.projects) {
             ret += `
-                <hr />
-                <div class="project" id="${proj.file}">
-                        <div class="project-header">
-                                <img src="${urls.githubProjectsFilesURL}/${proj.file}/miniature.png" />
-                                <h3 class="project-name">${proj.name}</h3>
-                        </div>
-                        <p class="project-brief">${proj.desc[lang]}</p>
-                </div>
-                `;
+		<hr />
+		<div class="project" id="${proj.file}">
+			<div class="project-header">
+				<img src="${urls.githubProjectsFilesURL}/${proj.file}/miniature.png" />
+				<h3 class="project-name">${proj.name}</h3>
+			</div>
+			<p class="project-brief">${proj.desc[lang]}</p>
+		</div>
+		`;
         }
         ret += '<hr /></div>';
         return ret;
@@ -41,10 +41,10 @@ function makeProjectList(lang) {
 const Projects = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
-        ${yield Header.make()}
-        <h1 class="projects-header">${textContent.projectsHeader[lang]}</h1>
-        ${yield makeProjectList(lang)}
-        `;
+	${yield Header.make()}
+	<h1 class="projects-header">${textContent.projectsHeader[lang]}</h1>
+	${yield makeProjectList(lang)}
+	`;
 }), () => __awaiter(void 0, void 0, void 0, function* () {
     const projs = document.getElementsByClassName('project');
     for (let pr of projs) {

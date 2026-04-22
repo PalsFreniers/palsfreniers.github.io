@@ -12,25 +12,25 @@ import * as textContent from "../content/texts.js";
 const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
-        <header class="nav-bar">
-                <ul>
-                        <a href="/home"><li>${textContent.home[lang]}</li></a>
-                        <a href="/projects"><li>${textContent.projects[lang]}</li></a>
-                        <a href="/contact"><li>${textContent.contact[lang]}</li></a>
-                </ul>
-        </header>
-        `;
+	<header class="nav-bar">
+		<ul>
+			<a href="/home"><li>${textContent.home[lang]}</li></a>
+			<a href="/projects"><li>${textContent.projects[lang]}</li></a>
+			<a href="/contact"><li>${textContent.contact[lang]}</li></a>
+		</ul>
+	</header>
+	`;
 }));
 export default Header;
 /*
  * <script>
-function abc(selectedguy) {
-  var x = document.getElementById("mySelect");
-alert(x.options[selectedguy].text);
-}
-</script>
+ function abc(selectedguy) {
+ var x = document.getElementById("mySelect");
+ alert(x.options[selectedguy].text);
+ }
+ </script>
 
-<select id="mySelect" onchange="abc(this.selectedIndex);">
-<option>option one</option>
-<option>option two</option>
-</select>*/
+ <select id="mySelect" onchange="abc(this.selectedIndex);">
+ <option>option one</option>
+ <option>option two</option>
+ </select>*/

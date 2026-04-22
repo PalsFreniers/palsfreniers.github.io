@@ -20,25 +20,25 @@ function makeProjectTitle(prog) {
         });
         const project = yield res.json();
         return `
-        <div class="project-entry-header">
-                <img alt="miniature of the project ${prog}" src="${urls.githubProjectsFilesURL}/${prog}/miniature.png" />
-                <h1 class="project-entry-title">${project.name}</h1>
-        </div>
-        `;
+	<div class="project-entry-header">
+		<img alt="miniature of the project ${prog}" src="${urls.githubProjectsFilesURL}/${prog}/miniature.png" />
+		<h1 class="project-entry-title">${project.name}</h1>
+	</div>
+	`;
     });
 }
 function makeCarousel(project, prog) {
     return `
-        <div class="project-entry-carousel" id="carousel">
-                <h3 class="project-entry-carousel-title">Images</h3>
-                <div class="project-entry-carousel-imgs">
-                        <button id="prev-slide" class="prev-slide slide-btn"><</button>
-                        <div id="slide" data-slidenum="0">
-                                <img id="carousel-img" alt="${project.images[0]}" src="${urls.githubProjectsFilesURL}/${prog}/images/1.png" />
-                        </div>
-                        <button id="next-slide" class="next-slide slide-btn">></button>
-                </div>
-        </div>`;
+	<div class="project-entry-carousel" id="carousel">
+		<h3 class="project-entry-carousel-title">Images</h3>
+		<div class="project-entry-carousel-imgs">
+			<button id="prev-slide" class="prev-slide slide-btn"><</button>
+			<div id="slide" data-slidenum="0">
+				<img id="carousel-img" alt="${project.images[0]}" src="${urls.githubProjectsFilesURL}/${prog}/images/1.png" />
+			</div>
+			<button id="next-slide" class="next-slide slide-btn">></button>
+		</div>
+	</div>`;
 }
 function makeDescription(lang, prog) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -50,22 +50,22 @@ function makeDescription(lang, prog) {
         });
         const project = yield res.json();
         return `
-        <div class="project-entry-description">
-                ${project.text[lang]}
-        </div>
-        ${makeCarousel(project, prog)}
-        `;
+	<div class="project-entry-description">
+		${project.text[lang]}
+	</div>
+	${makeCarousel(project, prog)}
+	`;
     });
 }
 const Project = new Page((arg) => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
-        ${yield Header.make()}
-        <div class="project-entry">
-                ${yield makeProjectTitle(arg)}
-                ${yield makeDescription(lang, arg)}
-        </div>
-        `;
+	${yield Header.make()}
+	<div class="project-entry">
+		${yield makeProjectTitle(arg)}
+		${yield makeDescription(lang, arg)}
+	</div>
+	`;
 }), (arg) => __awaiter(void 0, void 0, void 0, function* () {
     const res = yield fetch(`${urls.projectsFilesURL}/${arg}/info.json`, {
         method: 'GET',

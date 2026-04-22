@@ -10,12 +10,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 class Router {
     constructor() {
         this.routes = new Map();
+        window.addEventListener('popstate', (e) => {
+            var _a, _b, _c;
+            const route = (_b = (_a = e.state) === null || _a === void 0 ? void 0 : _a.route) !== null && _b !== void 0 ? _b : '/';
+            const arg = (_c = e.state) === null || _c === void 0 ? void 0 : _c.arg;
+            this.warp(route, arg, false);
+        });
     }
     add(route, page) {
         this.routes[route] = page;
     }
     warp() {
-        return __awaiter(this, arguments, void 0, function* (route = null, arg) {
+        return __awaiter(this, arguments, void 0, function* (route = null, arg, pushState = true) {
             if (!route) {
                 this.warp('/');
                 return;
@@ -23,6 +29,9 @@ class Router {
             if (!(route in this.routes)) {
                 console.warn(`unable to find route ${route}`);
                 this.warp('/404');
+            }
+            if (pushState) {
+                history.pushState({ route, arg }, '', route);
             }
             const DOM = yield this.routes[route].make(arg);
             const app = document.getElementById('app');

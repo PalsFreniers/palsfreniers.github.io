@@ -10,6 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import Page from '../page.js';
 export const E404 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
-        <h1>404 not found</h1>
-        `;
+	<h1>404 not found</h1>
+	`;
 }));
