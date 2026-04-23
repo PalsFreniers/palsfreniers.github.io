@@ -386,4 +386,23 @@ body {
   border-color: #7eb3ff;
 }
 
+.me-title {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7fa8;
+  white-space: nowrap;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.me-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(120, 160, 255, 0.1);
+}
+
 /*# sourceMappingURL=index.css.map */

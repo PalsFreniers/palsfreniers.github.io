@@ -9,9 +9,18 @@ function makeLangText(fr_, en_) {
 // misc
 export const name = makeLangText("Tidian DELAGE");
 // index
-export const whoami = makeLangText("Bonjour, je suis Tidian Delage et je suis en train de suivre des études en informatique à l'école 42.<br />Mon parcours scolaire a été plutôt conventionnel. J'ai débuté par des études générales, puis j'ai obtenu mon baccalauréat avec la mention européenne Mathématique - Anglais, comprenant les spécialités : Mathématique, Science de l'Ingénieur, Physique - Chimie.<br />J'ai débuté la programmation informatique à l'âge de 8 ans, devenu une passion, j'ai fini par me lancer dans des études d'informatique à l'école 42.", "Hello, I am Tidian Delage and I am studying computer science at school 42.<br />My school journey has been rather conventional. I started with general studies, then I obtained my baccalaureate with the European distinction in Mathematics - English, including specialties: Mathematics, Engineering Science, Physics - Chemistry.<br />I started computer programming at the age of 8, became a passion, I ended up embarking on computer science studies at school 42.");
-export const myability = makeLangText("C, C++, Ada, Anglais", "C, C++, Ada, English");
-export const myfuture = makeLangText("travailler a creer des outils dans l'éducation", "work to create tools in éducation");
+// --- WHOAMI : découpé en plusieurs parties ---
+export const whoami_intro = makeLangText("Je suis Tidian Delage, étudiant à l'école 42 d'Angoulême, spécialisé en programmation système, réseaux et cybersécurité.", "I am Tidian Delage, a student at École 42 in Angoulême, specialising in systems programming, networking and cybersecurity.");
+export const whoami_background = makeLangText("Mon parcours scolaire s'est construit autour des sciences : j'ai obtenu mon baccalauréat avec mention européenne Mathématiques - Anglais, avec les spécialités Mathématiques, Sciences de l'Ingénieur et Physique-Chimie.", "My academic background is rooted in science: I graduated with a European distinction in Mathematics and English, with specialisations in Mathematics, Engineering Science and Physics-Chemistry.");
+export const whoami_passion = makeLangText("J'ai écrit mon premier programme en C à 8 ans, avant de suivre mes premiers cours formels sur OpenClassrooms à 9 ans. Ce qui a commencé comme une curiosité est devenu une passion profonde pour les couches basses de l'informatique : systèmes d'exploitation, compilation, matériel.", "I wrote my first C program at 8 years old, before taking my first formal courses on OpenClassrooms at 9. What started as curiosity grew into a deep passion for the lower layers of computing: operating systems, compilation, hardware.");
+export const whoami_now = makeLangText("Aujourd'hui, je travaille sur des projets allant du ray tracing en C à l'écriture d'un noyau from scratch — en passant par de l'assembleur x86_64, de la gestion mémoire et des interfaces systèmes bas niveau.", "Today I work on projects ranging from ray tracing in C to writing a kernel from scratch — including x86_64 assembly, memory management and low-level system interfaces.");
+// --- MYABILITY ---
+export const myability = makeLangText("C, C++, Python, Ada, x86_64 ASM · Linux/POSIX, Windows · Système, Réseaux, Cybersécurité · LaTeX, Markdown, Doxygen · Anglais C1", "C, C++, Python, Ada, x86_64 ASM · Linux/POSIX, Windows · Systems, Networking, Cybersecurity · LaTeX, Markdown, Doxygen · English C1");
+// --- MYFUTURE ---
+export const myfuture = makeLangText("Contribuer à des projets open-source ambitieux, participer à la recherche en informatique fondamentale — systèmes, compilation, sécurité — et œuvrer pour une informatique plus transparente, souveraine et compréhensible.", "Contributing to ambitious open-source projects, engaging in fundamental computer science research — systems, compilation, security — and working toward a more transparent, sovereign and comprehensible computing world.");
+export const whoamiTitle = makeLangText("~ ❯ whoami", "~ ❯ whoami");
+export const myabilityTitle = makeLangText("~ ❯ compétences --list", "~ ❯ skills --list");
+export const myfutureTitle = makeLangText("~ ❯ cat avenir.md", "~ ❯ cat future.md");
 //projects
 export const projectsHeader = makeLangText("Mes Projets", "My Projects");
 export const projectDescTitle = makeLangText("Description");
