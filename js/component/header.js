@@ -14,6 +14,7 @@ const Header = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
     return `
 	<header class="nav-bar">
+		<a href="/"><span class="nav-brand">Tidian DELAGE</span></a>
 		<ul>
 			<a href="/home"><li>${textContent.home[lang]}</li></a>
 			<a href="/projects"><li>${textContent.projects[lang]}</li></a>

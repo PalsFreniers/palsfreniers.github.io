@@ -17,9 +17,18 @@ const Contact = withHeader(() => __awaiter(void 0, void 0, void 0, function* () 
 	${yield Header.make()}
 	${yield FaceNameTitle.make()}
 	<p class="context-text whoami">${textContent.whoami_intro[lang]}</p>
-	<p class="context-text phone"><strong>${textContent.phoneLabel[lang]}</strong>: ${textContent.phone[lang]}</p>
-	<p class="context-text mail"><strong>${textContent.mailLabel[lang]}</strong>: ${textContent.mail[lang]}</p>
-	<p class="context-text address"><strong>${textContent.addressLabel[lang]}</strong>: ${textContent.address[lang]}</p>
+	<p class="context-text phone contact-block">
+		<span class="contact-label">${textContent.phoneLabel[lang]}</span>
+		<span class="contact-value">${textContent.phone[lang]}</span>
+	</p>
+	<p class="context-text mail contact-block">
+		<span class="contact-label">${textContent.mailLabel[lang]}</span>
+		<span class="contact-value">${textContent.mail[lang]}</span>
+	</p>
+	<p class="context-text address contact-block">
+		<span class="contact-label">${textContent.addressLabel[lang]}</span>
+		<span class="contact-value">${textContent.address[lang]}</span>
+	</p>
 	`;
 }));
 export default Contact;

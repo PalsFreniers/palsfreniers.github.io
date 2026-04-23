@@ -10,6 +10,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import Page from '../page.js';
 export const E404 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
-	<h1>404 not found</h1>
-	`;
+	<div class="error-block">
+		<span class="error-code">404</span>
+		<span class="error-msg">Not Found</span>
+	</div>`;
+}));
+export const E403 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+    return `
+	<div class="error-block">
+		<span class="error-code">403</span>
+		<span class="error-msg">Not Authorized</span>
+	</div>`;
+}));
+export const E500 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+    return `
+	<div class="error-block">
+		<span class="error-code">500</span>
+		<span class="error-msg">Server Error</span>
+	</div>`;
 }));
