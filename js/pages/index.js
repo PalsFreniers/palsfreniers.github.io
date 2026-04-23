@@ -16,14 +16,14 @@ const Index = withHeader(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
 	${yield Header.make()}
 	${yield FaceNameTitle.make()}
-	<h3 class="me-title terminal-prompt">${textContent.whoamiTitle[lang]}</h3>
+	<h3 class="me-title">${textContent.whoamiTitle[lang]}</h3>
 	<p class="context-text whoami">${textContent.whoami_intro[lang]}</p>
 	<p class="context-text whoami">${textContent.whoami_background[lang]}</p>
 	<p class="context-text whoami">${textContent.whoami_passion[lang]}</p>
 	<p class="context-text whoami">${textContent.whoami_now[lang]}</p>
-	<h3 class="me-title terminal-prompt">${textContent.myabilityTitle[lang]}</h3>
+	<h3 class="me-title">${textContent.myabilityTitle[lang]}</h3>
 	<p class="context-text whoami">${textContent.myability[lang]}</p>
-	<h3 class="me-title terminal-prompt">${textContent.myfutureTitle[lang]}</h3>
+	<h3 class="me-title">${textContent.myfutureTitle[lang]}</h3>
 	<p class="context-text whoami">${textContent.myfuture[lang]}</p>
 	`;
 }));

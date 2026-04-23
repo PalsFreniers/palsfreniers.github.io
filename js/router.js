@@ -22,7 +22,6 @@ class Router {
     }
     warp() {
         return __awaiter(this, arguments, void 0, function* (route = null, arg, pushState = true) {
-            var _a;
             if (!route) {
                 this.warp('/');
                 return;
@@ -42,7 +41,12 @@ class Router {
             const links = document.getElementsByTagName('a');
             for (let i = 0; i < links.length; i++) {
                 const val = links[i];
-                if ((_a = val.getAttribute('href')) === null || _a === void 0 ? void 0 : _a.startsWith('https://'))
+                const href = val.getAttribute('href');
+                if (href === null || href === void 0 ? void 0 : href.startsWith('https://'))
+                    continue;
+                if (href === null || href === void 0 ? void 0 : href.startsWith('mailto:'))
+                    continue;
+                if (href === null || href === void 0 ? void 0 : href.startsWith('tel:'))
                     continue;
                 val.addEventListener('click', (e) => {
                     e.preventDefault();

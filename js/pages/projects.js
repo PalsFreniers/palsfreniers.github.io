@@ -17,10 +17,11 @@ function makeProjectList(lang) {
         const projects = yield urls.getJsonGithub('progs.json');
         console.log(projects);
         let ret = '<div class="project-list">';
+        let i = 0;
         for (let proj of projects.projects) {
             ret += `
 		<hr />
-		<div class="project" id="${proj.file}">
+		<div data-index="${i}" class="project" id="${proj.file}">
 			<div class="project-header">
 				<img src="${urls.getFileUrl(`progs/${proj.file}/miniature.png`)}" />
 				<h3 class="project-name">${proj.name}</h3>
@@ -28,6 +29,7 @@ function makeProjectList(lang) {
 			<p class="project-brief">${proj.desc[lang]}</p>
 		</div>
 		`;
+            i += 1;
         }
         ret += '<hr /></div>';
         return ret;
@@ -37,7 +39,13 @@ const Projects = withHeader(() => __awaiter(void 0, void 0, void 0, function* ()
     const lang = localStorage.getItem("lang") || "fr";
     return `
 	${yield Header.make()}
-	<h1 class="projects-header">${textContent.projectsHeader[lang]}</h1>
+	<div class="page-header">
+		<h1 class="page-header-title">
+			<span class="page-header-prompt">~ ❯</span>
+			${textContent.projects[lang]}
+		</h1>
+		<p class="page-header-sub">${textContent.projectsSub[lang]}</p>
+	</div>
 	${yield makeProjectList(lang)}
 	`;
 }), () => __awaiter(void 0, void 0, void 0, function* () {

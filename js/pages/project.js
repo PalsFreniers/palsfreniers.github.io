@@ -28,6 +28,7 @@ function makeCarousel(project, prog) {
     return `
 	<div class="project-entry-carousel" id="carousel">
 		<h3 class="project-entry-carousel-title">Images</h3>
+		<span class="carousel-counter">1 / ${project.images.length}</span>
 		<div class="project-entry-carousel-imgs">
 			<button id="prev-slide" class="prev-slide slide-btn"><</button>
 			<div id="slide" data-slidenum="0">
@@ -73,6 +74,7 @@ const Project = withHeader((arg) => __awaiter(void 0, void 0, void 0, function* 
     const project = yield urls.getJsonGithub('progs/' + arg + '/info.json');
     return `
 	${yield Header.make()}
+	<button class="back-btn" onclick="history.back()">${textContent.backBtn[lang]}</button>
 	<div class="project-entry">
 		${yield makeProjectTitle(arg, project)}
 		${yield makeDescription(lang, arg, project)}
@@ -81,25 +83,10 @@ const Project = withHeader((arg) => __awaiter(void 0, void 0, void 0, function* 
 }), (arg) => __awaiter(void 0, void 0, void 0, function* () {
     const project = yield urls.getJsonGithub('progs/' + arg + '/info.json');
     const prevBtn = document.getElementById('prev-slide');
-    if (!prevBtn) {
-        console.error('unable to find prev Button');
-        return;
-    }
     const nextBtn = document.getElementById('next-slide');
-    if (!nextBtn) {
-        console.error('unable to find next Button');
-        return;
-    }
     const slide = document.getElementById('slide');
-    if (!slide) {
-        console.error('unable to find slide div');
-        return;
-    }
     const img = document.getElementById('carousel-img');
-    if (!img) {
-        console.error('unable to find carousel image');
-        return;
-    }
+    const counter = document.querySelector('.carousel-counter');
     prevBtn.addEventListener('click', () => {
         const count = project.images.length;
         let currentSlide = parseInt(slide.getAttribute("data-slidenum") || '0');
@@ -109,6 +96,7 @@ const Project = withHeader((arg) => __awaiter(void 0, void 0, void 0, function* 
         img.setAttribute('src', urls.getFileUrl(`progs/${arg}/images/${currentSlide + 1}.png`));
         img.setAttribute('alt', project.images[currentSlide]);
         slide.setAttribute('data-slidenum', `${currentSlide}`);
+        counter.textContent = `${currentSlide + 1} / ${count}`;
     });
     nextBtn.addEventListener('click', () => {
         const count = project.images.length;
@@ -119,6 +107,7 @@ const Project = withHeader((arg) => __awaiter(void 0, void 0, void 0, function* 
         img.setAttribute('src', urls.getFileUrl(`progs/${arg}/images/${currentSlide + 1}.png`));
         img.setAttribute('alt', project.images[currentSlide]);
         slide.setAttribute('data-slidenum', `${currentSlide}`);
+        counter.textContent = `${currentSlide + 1} / ${count}`;
     });
     const carouselImg = document.getElementById('carousel-img');
     const lightbox = document.getElementById('lightbox');

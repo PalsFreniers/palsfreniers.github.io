@@ -13,8 +13,14 @@ const FaceNameTitle = new Page(() => __awaiter(void 0, void 0, void 0, function*
     const lang = localStorage.getItem("lang") || "fr";
     return `
 	<div class="face-name-title">
-	<img class="portrait" alt="image of my face" src="images/photo.png" />
-	<h1 class="name-title">${textContent.name[lang]}</h1>
+		<img class="portrait" alt="Tidian DELAGE" src="images/photo.png" />
+		<h1 class="name-title">
+			<span class="terminal-prompt">
+				tidian-delage<span class="at">@</span>workspace:~$
+				<span class="caret"></span>
+			</span>
+			<span class="name">${textContent.name[lang]}</span>
+		</h1>
 	</div>
 	`;
 }));
