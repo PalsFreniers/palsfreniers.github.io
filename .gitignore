@@ -1,6 +1,7 @@
 ts
-tsconfig.json
+css/*.map
+scss
 deploy.sh
 test.sh
-scss
-css/*.map
+readme.md
+tsconfig.json
