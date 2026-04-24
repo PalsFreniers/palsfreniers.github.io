@@ -1,0 +1,100 @@
+@use 'tokens' as *;
+
+.nav-bar {
+  @include flex-row($justify: space-between);
+  background:      rgba($bg-void, 0.92);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom:   1px solid $bg-border;
+  padding:         0 $space-xl;
+  height:          $nav-height;
+  position:        sticky;
+  top:             0;
+  z-index:         100;
+
+  // Ligne phosphore en bas de nav
+  &::after {
+    content:    '';
+    position:   absolute;
+    bottom:     -1px;
+    left:       0;
+    right:      0;
+    height:     1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $accent-border 20%,
+      $accent-border 80%,
+      transparent 100%
+    );
+  }
+
+  // Logo / nom — style prompt
+  .nav-brand {
+    @include prompt(13px, $accent);
+    opacity: 0.7;
+    letter-spacing: 0.02em;
+
+    &::before {
+      content: '~/';
+      color:   $text-dim;
+    }
+  }
+
+  ul {
+    @include flex-row($gap: 2px);
+    list-style: none;
+
+    a {
+      @include prompt(11px);
+      color:           $text-primary;
+      text-decoration: none;
+      padding:         6px 12px;
+      border:          1px solid transparent;
+      transition:      color $t-fast, border-color $t-fast, background $t-fast;
+      position:        relative;
+
+      li {
+        // Préfixe shell discret
+        &::before {
+          content:  './';
+          color:    $text-muted;
+        }
+      }
+
+      &:hover {
+        color:        $accent;
+        border-color: $accent-border;
+        background:   $accent-subtle;
+      }
+
+      &.active {
+        color:        $accent;
+        background:   $accent-subtle;
+        border-color: $accent-border;
+      }
+    }
+  }
+
+  select {
+    @include prompt(11px);
+    background:   transparent;
+    border:       1px solid $bg-border;
+    color:        $text-muted;
+    font-family:  $font-mono;
+    padding:      4px 10px;
+    cursor:       pointer;
+    transition:   border-color $t-fast, color $t-fast;
+    appearance:   none;
+    -webkit-appearance: none;
+
+    &:hover {
+      border-color: $accent-border;
+      color:        $accent;
+    }
+
+    option {
+      background: $bg-surface;
+      color:      $text-primary;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+// ─────────────────────────────────────────────
+// Palette — Terminal Phosphore
+// ─────────────────────────────────────────────
+// Fonds
+$bg-void:       #070809;       // fond principal — quasi-noir
+$bg-surface:    #0d1117;       // cartes, panneaux
+$bg-raised:     #111820;       // hover, éléments surélevés
+$bg-border:     #1c2530;       // séparateurs visuels
+
+// Texte
+$text-primary:  #d6e4f0;       // texte principal — blanc froid
+$text-muted:    #4a6278;       // texte secondaire
+$text-dim:      #2a3d50;       // texte fantôme, décoratif
+
+// Accent principal — phosphore vert-bleu froid
+$accent:        #00d4aa;       // phosphore principal
+$accent-glow:   rgba(0, 212, 170, 0.15);
+$accent-subtle: rgba(0, 212, 170, 0.08);
+$accent-badge:  rgba(0, 212, 170, 0.10);
+$accent-border: rgba(0, 212, 170, 0.20);
+
+// Accent secondaire — bleu électrique (héritage de la palette d'origine)
+$accent2:       #3d8fff;
+$accent2-subtle: rgba(61, 143, 255, 0.10);
+
+// Signal d'alerte — ambre
+$amber:         #e8a020;
+$amber-subtle:  rgba(232, 160, 32, 0.10);
+
+// ─────────────────────────────────────────────
+// Typographie
+// ─────────────────────────────────────────────
+$font-mono:   'JetBrains Mono', 'Fira Code', monospace;
+$font-sans:   'DM Sans', sans-serif;
+$fs-base:     14px;
+$fs-sm:       12px;
+$fs-xs:       10px;
+$lh-base:     1.75;
+$lh-tight:    1.2;
+
+// ─────────────────────────────────────────────
+// Espacement
+// ─────────────────────────────────────────────
+$space-xs:  4px;
+$space-sm:  8px;
+$space-md:  16px;
+$space-lg:  24px;
+$space-xl:  40px;
+$space-2xl: 64px;
+
+// ─────────────────────────────────────────────
+// Layout
+// ─────────────────────────────────────────────
+$nav-height:   56px;
+$radius-pill:  999px;
+$radius-card:  0px;     // angles francs — style silicium
+$radius-sm:    2px;
+$radius-large: 4px;
+
+// ─────────────────────────────────────────────
+// Transitions
+// ─────────────────────────────────────────────
+$t-snap:   0.1s ease;
+$t-fast:   0.18s ease;
+$t-normal: 0.28s ease;

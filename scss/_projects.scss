@@ -1,0 +1,123 @@
+@use 'tokens' as *;
+
+// ── En-tête de section style shell ──────────
+.projects-header {
+  @include flex-row($gap: $space-md, $align: center);
+  padding: $space-xl $space-xl $space-md;
+
+  h2 {
+    @include shell-label(10px);
+    color:       $text-muted;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    // Préfixe prompt
+    &::before {
+      content: '$ ls ';
+      color:   $text-dim;
+    }
+  }
+
+  // Ligne séparatrice droite
+  &::after {
+    content:    '';
+    flex:       1;
+    height:     1px;
+    background: $bg-border;
+  }
+}
+
+// ── Wrapper liste ────────────────────────────
+.project-list {
+  padding:        0 $space-xl $space-2xl;
+  display:        flex;
+  flex-direction: column;
+  gap:            1px;             // gap d'1px = jointure comme un tableau ASCII
+}
+
+// ── Carte projet ─────────────────────────────
+.project {
+  padding:    $space-md $space-lg;
+  border:     1px solid $bg-border;
+  background: $bg-surface;
+  cursor:     pointer;
+  position:   relative;
+  transition: background $t-fast, border-color $t-fast;
+
+  // Index de ligne (décoratif, style éditeur)
+  &[data-index]::after {
+    content:    attr(data-index);
+    position:   absolute;
+    right:      $space-lg;
+    top:        50%;
+    transform:  translateY(-50%);
+    @include    prompt(10px, $text-muted);
+    user-select: none;
+  }
+
+  // Barre d'accent gauche
+  &::before {
+    @include accent-bar(70%, 2px);
+  }
+
+  &:hover {
+    background:   $bg-raised;
+    border-color: $accent-border;
+
+    &::before {
+      transform: translateY(-50%) scaleY(1);
+    }
+
+    .project-name {
+      color: $accent;
+    }
+  }
+
+  // Ligne de connexion entre cartes (style ASCII tree)
+  & + & {
+    border-top-color: transparent;
+    margin-top: 1px;
+  }
+
+  .project-header {
+    @include flex-row($gap: $space-md);
+
+    img {
+      width:       44px;
+      height:      44px;
+      object-fit:  cover;
+      flex-shrink: 0;
+      filter:      grayscale(30%);
+      border:      1px solid $bg-border;
+      transition:  filter $t-fast;
+
+      .project:hover & {
+        filter: grayscale(0%);
+        border-color: $accent-border;
+      }
+    }
+
+    .project-name {
+      @include display-mono(18px, 400);
+      color:      $text-primary;
+      transition: color $t-fast;
+    }
+  }
+
+  .project-brief {
+    @include prompt(12px, $text-muted);
+    margin-top:   $space-xs;
+    padding-left: 60px;   // aligné après l'image 44px + gap 16px
+    line-height:  1.5;
+  }
+
+  .project-tag {
+    @include prompt($fs-xs);
+    display:       inline-block;
+    padding:       2px 8px;
+    border:        1px solid $accent-border;
+    background:    $accent-badge;
+    color:         $accent;
+    margin:        $space-xs 0 0 60px;
+  }
+}

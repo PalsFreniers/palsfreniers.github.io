@@ -1,0 +1,100 @@
+@use 'tokens' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding:    0;
+  margin:     0;
+}
+
+// Curseur personnalisé — croix de terminal
+html {
+  cursor: crosshair;
+}
+
+::selection {
+  background: $accent-subtle;
+  color:      $accent;
+}
+
+body {
+  background:  $bg-void;
+  font-family: $font-sans;
+  color:       $text-primary;
+  font-size:   $fs-base;
+  line-height: $lh-base;
+  min-height:  100vh;
+
+  // Texture scanlines discrète sur tout le body
+  &::before {
+    content:        '';
+    position:       fixed;
+    inset:          0;
+    z-index:        0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 2px,
+      rgba(0, 180, 140, 0.06) 2px,
+      rgba(180, 140, 0, 0.06) 4px
+    );
+  }
+
+  // Vignette subtile
+  &::after {
+    content:        '';
+    position:       fixed;
+    inset:          0;
+    z-index:        0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+  }
+}
+
+// Tout le contenu au-dessus des pseudo-éléments
+#app,
+main,
+.nav-bar {
+  position: relative;
+  z-index:  1;
+}
+
+a {
+  color:           inherit;
+  text-decoration: none;
+  
+  &:hover {
+    color: $accent;
+  }
+}
+// Scrollbar style terminal
+::-webkit-scrollbar, ::-moz-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track, ::-moz-scrollbar-track {
+  background: $bg-void;
+}
+::-webkit-scrollbar-thumb, ::-moz-scrollbar-thumb {
+  background: $bg-border;
+  &:hover { background: $accent-border; }
+}
+
+// Lignes de grille de fond très discrètes
+.grid-bg {
+  position:   fixed;
+  inset:      0;
+  z-index:    0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 212, 170, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 170, 0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
