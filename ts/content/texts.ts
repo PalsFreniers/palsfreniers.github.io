@@ -33,8 +33,8 @@ export const whoami_passion: LangText = makeLangText(
 );
 
 export const whoami_now: LangText = makeLangText(
-    "Aujourd'hui, je travaille sur des projets allant du ray tracing en C à l'écriture d'un noyau from scratch — en passant par de l'assembleur x86_64, de la gestion mémoire et des interfaces systèmes bas niveau.",
-    "Today I work on projects ranging from ray tracing in C to writing a kernel from scratch — including x86_64 assembly, memory management and low-level system interfaces."
+    "Aujourd'hui, je travaille sur des projets allant du ray tracing en C à l'écriture d'un noyau from scratch, en passant par de l'assembleur x86_64, de la gestion mémoire et des interfaces systèmes bas niveau.",
+    "Today I work on projects ranging from ray tracing in C to writing a kernel from scratch, including x86_64 assembly, memory management and low-level system interfaces."
 );
 
 // --- MYABILITY ---
@@ -47,8 +47,8 @@ export const myability: LangText = makeLangText(
 // --- MYFUTURE ---
 
 export const myfuture: LangText = makeLangText(
-    "Contribuer à des projets open-source ambitieux, participer à la recherche en informatique fondamentale — systèmes, compilation, sécurité — et œuvrer pour une informatique plus transparente, souveraine et compréhensible.",
-    "Contributing to ambitious open-source projects, engaging in fundamental computer science research — systems, compilation, security — and working toward a more transparent, sovereign and comprehensible computing world."
+    "Contribuer à des projets open-source ambitieux, participer à la recherche en informatique fondamentale , systèmes, compilation, sécurité , et œuvrer pour une informatique plus transparente, souveraine et compréhensible.",
+    "Contributing to ambitious open-source projects, engaging in fundamental computer science research , systems, compilation, security , and working toward a more transparent, sovereign and comprehensible computing world."
 );
 
 export const whoamiTitle: LangText = makeLangText(
@@ -103,6 +103,6 @@ export const contactSub: LangText = makeLangText(
   "Passionate student, open to any exchange around fundamental computer science."
 );
 export const projectsSub: LangText = makeLangText(
-  "Chaque projet est une occasion d'explorer les couches basses — du silicium à l'algorithme.",
-  "Each project is an opportunity to explore the lower layers — from silicon to algorithm."
+  "Chaque projet est une occasion d'explorer les couches basses: du silicium à l'algorithme.",
+  "Each project is an opportunity to explore the lower layers: from silicon to algorithm."
 );
