@@ -5,7 +5,7 @@
 
   // ── Header (image + titre) ───────────────────
   .project-entry-header {
-    @include flex-row($gap: $space-xl, $align: flex-start);
+    @include flex-row($gap: $space-xl, $align: center, $justify: center);
     margin-bottom: $space-xl;
     padding-bottom: $space-xl;
     border-bottom: 1px solid $bg-border;
@@ -19,9 +19,9 @@
       border:     1px solid $bg-border;
     }
 
-    .project-entry-meta {
-      flex: 1;
-    }
+    //.project-entry-meta {
+    //  flex: 1;
+    //}
 
     // Fil d'Ariane style path
     .project-entry-breadcrumb {
@@ -31,7 +31,8 @@
     }
 
     a {
-      text-decoration: none;
+      display:   inline;        // ← clé : pas block ni flex
+      width:     fit-content;   // ← s'adapte au texte
 
       .project-entry-title {
         @include display-mono(32px, 300);

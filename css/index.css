@@ -441,8 +441,8 @@ a:hover {
 .project-entry .project-entry-header {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 40px;
   margin-bottom: 40px;
   padding-bottom: 40px;
@@ -456,9 +456,6 @@ a:hover {
   filter: grayscale(20%) contrast(1.05);
   border: 1px solid #1c2530;
 }
-.project-entry .project-entry-header .project-entry-meta {
-  flex: 1;
-}
 .project-entry .project-entry-header .project-entry-breadcrumb {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
@@ -469,7 +466,8 @@ a:hover {
   display: block;
 }
 .project-entry .project-entry-header a {
-  text-decoration: none;
+  display: inline;
+  width: fit-content;
 }
 .project-entry .project-entry-header a .project-entry-title {
   font-family: "JetBrains Mono", "Fira Code", monospace;

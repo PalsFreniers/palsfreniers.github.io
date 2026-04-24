@@ -7,23 +7,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import Page from '../page.js';
-export const E404 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+import Header from '../component/header.js';
+import { withHeader } from '../component/header.js';
+export const E404 = withHeader(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
+	${yield Header.make()}
 	<div class="error-block">
 		<span class="error-code">404</span>
 		<span class="error-msg">Not Found</span>
 	</div>`;
 }));
-export const E403 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+export const E403 = withHeader(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
+	${yield Header.make()}
 	<div class="error-block">
 		<span class="error-code">403</span>
-		<span class="error-msg">Not Authorized</span>
+		<span class="error-msg">Forbidden</span>
 	</div>`;
 }));
-export const E500 = new Page(() => __awaiter(void 0, void 0, void 0, function* () {
+export const E500 = withHeader(() => __awaiter(void 0, void 0, void 0, function* () {
     return `
+	${yield Header.make()}
 	<div class="error-block">
 		<span class="error-code">500</span>
 		<span class="error-msg">Server Error</span>

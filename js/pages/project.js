@@ -15,10 +15,9 @@ function makeProjectTitle(prog, project) {
     return __awaiter(this, void 0, void 0, function* () {
         return `
 	<div class="project-entry-header">
-		<div class="project-entry-breadcrumb"></div>
+		<img alt="miniature of the project ${prog}" src="${urls.getFileUrl(`progs/${prog}/miniature.png`)}" />
 		<div class="project-entry-meta">
-			<img alt="miniature of the project ${prog}" src="${urls.getFileUrl(`progs/${prog}/miniature.png`)}" />
-			<a href="${project.url}" target="_blank"><h1 class="project-entry-title">${project.name}</h1></a>
+			<a href="${project.url}" target="_blank"><span class="project-entry-title">${project.name}</span></a>
 		</div>
 	</div>
 	`;

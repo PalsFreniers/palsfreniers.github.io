@@ -34,6 +34,7 @@ class Router {
 			const app: HTMLElement | null = document.getElementById('app');
 			if(app == null) return;
 			app.innerHTML = DOM;
+			window.scrollTo(0, 0);
 		} catch(e: any) {
 			console.warn(`error occured inside a warp`);
 			this.warp('/404');

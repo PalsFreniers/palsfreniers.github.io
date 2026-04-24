@@ -1,7 +1,0 @@
-ts
-css/*.map
-scss
-deploy.sh
-test.sh
-readme.md
-tsconfig.json

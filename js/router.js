@@ -39,6 +39,7 @@ class Router {
                 if (app == null)
                     return;
                 app.innerHTML = DOM;
+                window.scrollTo(0, 0);
             }
             catch (e) {
                 console.warn(`error occured inside a warp`);

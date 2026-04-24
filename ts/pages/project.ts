@@ -17,10 +17,9 @@ interface Project {
 async function makeProjectTitle(prog: string, project: Project): Promise<string> {
 	return `
 	<div class="project-entry-header">
-		<div class="project-entry-breadcrumb"></div>
+		<img alt="miniature of the project ${prog}" src="${urls.getFileUrl(`progs/${prog}/miniature.png`)}" />
 		<div class="project-entry-meta">
-			<img alt="miniature of the project ${prog}" src="${urls.getFileUrl(`progs/${prog}/miniature.png`)}" />
-			<a href="${project.url}" target="_blank"><h1 class="project-entry-title">${project.name}</h1></a>
+			<a href="${project.url}" target="_blank"><span class="project-entry-title">${project.name}</span></a>
 		</div>
 	</div>
 	`;
