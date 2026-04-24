@@ -17,5 +17,5 @@ if (!localStorage.getItem("lang")) {
     localStorage.setItem("lang", "fr");
 }
 requestAnimationFrame(() => {
-    nav.warp();
+    nav.warp(document.location.pathname);
 });
