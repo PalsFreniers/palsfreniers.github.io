@@ -1,0 +1,149 @@
+// ═════════════════════════════════════════════
+//  Portfolio — index.scss  (Terminal Phosphore)
+//  Point d'entrée principal (Dart Sass @use)
+// ═════════════════════════════════════════════
+
+@use 'base';
+@use 'nav';
+@use 'hero';
+@use 'projects';
+@use 'project-entry';
+@use 'media';
+
+@use 'tokens' as *;
+
+// ── Titre de section page "à propos" ────────
+.me-title {
+  @include shell-label(10px);
+  color:        $accent;
+  margin:       $space-xl $space-xl $space-md;
+  padding-bottom: $space-xs;
+  border-bottom: 1px solid $bg-border;
+  display:      flex;
+  align-items:  center;
+  gap:          $space-md;
+  font-size:    $fs-sm;
+
+  &::before {
+    content:    '▸ ';
+    color:      $accent;
+    flex-shrink: 0;
+  }
+
+  &::after {
+    content:    '';
+    flex:       1;
+    height:     1px;
+    background: $bg-border;
+  }
+}
+
+// ── Blocs de contenu de la page contact ─────
+.contact-block {
+  padding:    $space-md $space-lg;
+  background: $bg-surface;
+  border:     1px solid $bg-border;
+  margin:     0 $space-xl $space-xs;
+  display:    flex;
+  flex-direction: column;
+  gap:        $space-xs;
+  transition: border-color $t-fast;
+
+  &:hover { border-color: $accent-border; }
+
+  .contact-label {
+    @include prompt($fs-xs, $text-dim);
+  }
+
+  .contact-value {
+    @include prompt(13px, $text-primary);
+    color: $accent;
+  }
+}
+
+// ── Animations globales ──────────────────────
+
+// Entrée douce des éléments de page
+@keyframes fadeUp {
+  from {
+    opacity:   0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+.face-name-title,
+.context-text,
+.projects-header,
+.project-list,
+.me-title {
+  animation: fadeUp 0.4s ease both;
+}
+
+.project {
+  animation:          fadeUp 0.3s ease both;
+  animation-delay:    calc(var(--i, 0) * 60ms);
+}
+
+// ── État d'erreur / 404 ──────────────────────
+.error-block {
+  padding:      $space-2xl $space-xl;
+  text-align:   center;
+
+  .error-code {
+    @include display-mono(80px, 300);
+    color:     $text-dim;
+    display:   block;
+  }
+
+  .error-msg {
+    @include prompt(13px, $text-muted);
+    margin-top: $space-md;
+    display:    block;
+  }
+}
+
+.back-btn {
+  @include mono(11px);
+  background:   transparent;
+  border:       none;
+  color:        $text-muted;
+  cursor:       pointer;
+  padding:      $space-md $space-xl;
+  display:      block;
+  transition:   color $t-fast;
+
+  &::before { content: '← '; color: $text-dim; }
+  &:hover   { color: $accent; }
+}
+
+.page-header {
+  padding:       $space-xl $space-xl $space-lg;
+  border-bottom: 1px solid $bg-border;
+  margin-bottom: $space-md;
+
+  &-title {
+    @include display-mono(28px, 300);
+    color: $text-primary;
+
+    .page-header-prompt {
+      color:        $accent;
+      margin-right: $space-sm;
+      opacity:      0.7;
+    }
+  }
+
+  &-sub {
+    @include prompt(12px, $text-muted);
+    margin-top: $space-sm;
+    padding-left: $space-xs;
+
+    &::before {
+      content: '# ';
+      color:   $text-dim;
+    }
+  }
+}

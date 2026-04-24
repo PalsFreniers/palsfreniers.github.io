@@ -1,0 +1,217 @@
+@use 'tokens' as *;
+
+.project-entry {
+  padding:   $space-xl $space-xl;
+
+  // ── Header (image + titre) ───────────────────
+  .project-entry-header {
+    @include flex-row($gap: $space-xl, $align: flex-start);
+    margin-bottom: $space-xl;
+    padding-bottom: $space-xl;
+    border-bottom: 1px solid $bg-border;
+
+    img {
+      width:      160px;
+      height:     160px;
+      object-fit: cover;
+      flex-shrink: 0;
+      filter:     grayscale(20%) contrast(1.05);
+      border:     1px solid $bg-border;
+    }
+
+    .project-entry-meta {
+      flex: 1;
+    }
+
+    // Fil d'Ariane style path
+    .project-entry-breadcrumb {
+      @include prompt(10px, $text-dim);
+      margin-bottom: $space-sm;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+
+      .project-entry-title {
+        @include display-mono(32px, 300);
+        color:      $text-primary;
+        transition: color $t-fast;
+
+        &:hover { color: $accent; }
+      }
+    }
+  }
+
+  // ── Titres de sections ─────────────────────
+  .desc-title,
+  .skill-title {
+    @include shell-label(10px);
+    color:        $text-muted;
+    margin-bottom: $space-md;
+    padding-bottom: $space-xs;
+    border-bottom: 1px solid $bg-border;
+    display:      block;
+
+    // Icône prompt
+    &::before {
+      content: '▸ ';
+      color:   $accent;
+      font-style: normal;
+    }
+  }
+
+  // ── Description ───────────────────────────
+  .project-entry-description {
+    @include prompt(13px, $text-muted);
+    line-height:   1.8;
+    margin-bottom: $space-xl;
+    padding:       $space-md $space-lg;
+    background:    $bg-surface;
+    border-left:   2px solid $accent-border;
+  }
+
+  // ── Skills ────────────────────────────────
+  .project-entry-skills {
+    list-style: none;
+    display:    flex;
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:        $space-xs;
+    margin:     $space-md 0 $space-xl;
+
+    .project-entry-skill-item {
+      @include prompt($fs-xs);
+      padding:  2px 10px;
+      border:   1px solid $accent-border;
+      color:    $accent;
+      background: $accent-subtle;
+
+      &::before {
+        content: '+ ';
+        color:   $text-dim;
+      }
+    }
+  }
+
+  // ── Carousel ──────────────────────────────
+  .project-entry-carousel {
+    background:     $bg-surface;
+    border:         1px solid $bg-border;
+    display:        flex;
+    flex-direction: column;
+    align-items:    center;
+    padding:        $space-lg;
+    gap:            $space-md;
+
+    .project-entry-carousel-title {
+      @include shell-label(10px);
+      color:    $text-muted;
+      width:    100%;
+
+      &::before {
+        content: '▸ ';
+        color:   $accent;
+      }
+    }
+
+    .project-entry-carousel-imgs {
+      @include flex-row($gap: $space-md, $justify: center);
+      width: 100%;
+
+      #carousel-img {
+        max-width:  256px;
+        max-height: 256px;
+        cursor:     zoom-in;
+        border:     1px solid $bg-border;
+        transition: border-color $t-fast;
+        filter:     contrast(1.05);
+
+        &:hover {
+          border-color: $accent-border;
+        }
+      }
+
+      .slide-btn {
+        width:      28px;
+        height:     28px;
+        border:     1px solid $bg-border;
+        background: $bg-raised;
+        color:      $text-muted;
+        cursor:     pointer;
+        flex-shrink: 0;
+        transition: border-color $t-fast, color $t-fast, background $t-fast;
+        font-family: $font-mono;
+        font-size:  14px;
+        display:    flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          border-color: $accent-border;
+          color:        $accent;
+          background:   $accent-subtle;
+        }
+      }
+    }
+  }
+
+  // ── Lightbox ──────────────────────────────
+  .lightbox {
+    display:         none;
+    position:        fixed;
+    inset:           0;
+    z-index:         1000;
+    align-items:     center;
+    justify-content: center;
+
+    &.active { display: flex; }
+
+    &-overlay {
+      position:   absolute;
+      inset:      0;
+      background: rgba(0, 0, 0, 0.92);
+      cursor:     zoom-out;
+    }
+
+    &-content {
+      position:        relative;
+      z-index:         1;
+      display:         flex;
+      align-items:     center;
+      justify-content: center;
+
+      img {
+        max-width:   90vw;
+        max-height:  85vh;
+        object-fit:  contain;
+        box-shadow:  0 0 80px rgba(0, 0, 0, 0.8), 0 0 1px $accent-border;
+        border:      1px solid $bg-border;
+      }
+    }
+
+    &-close {
+      position:   absolute;
+      top:        -$space-md;
+      right:      -$space-md;
+      width:      28px;
+      height:     28px;
+      border:     1px solid $accent-border;
+      background: $bg-surface;
+      color:      $accent;
+      cursor:     pointer;
+      font-size:  12px;
+      font-family: $font-mono;
+      display:    flex;
+      align-items:     center;
+      justify-content: center;
+      transition: background $t-fast;
+
+      &:hover { background: $accent-subtle; }
+    }
+  }
+}
+
+.carousel-counter {
+  @include mono(10px, $text-dim);
+}

@@ -1,0 +1,117 @@
+@use 'tokens' as *;
+
+// ── Hero — style terminal d'identification ───
+.face-name-title {
+  @include flex-row($gap: $space-xl, $align: flex-start);
+  padding:    $space-2xl $space-xl $space-lg;
+  position:   relative;
+
+  // Photo de profil — style viewport carré avec bord phosphore
+  .portrait {
+    width:       80px;
+    height:      80px;
+    flex-shrink: 0;
+    object-fit:  cover;
+    border:      1px solid $accent-border;
+    filter:      grayscale(20%) contrast(1.05);
+    position:    relative;
+    transition:  filter $t-normal, border-color $t-normal;
+
+    // Coin décoratif — style circuit imprimé
+    &::after {
+      content:     '';
+      position:    absolute;
+      bottom:      -4px;
+      right:       -4px;
+      width:       12px;
+      height:      12px;
+      border-right: 1px solid $accent;
+      border-bottom: 1px solid $accent;
+    }
+
+    &:hover {
+      filter:       grayscale(0%) contrast(1.1);
+      border-color: $accent;
+    }
+  }
+
+  .name-title {
+    padding-top: $space-xs;
+
+    // Ligne "user@host" au-dessus du nom
+
+    // Nom principal — grand, monospace, léger
+    .name {
+      @include display-mono(38px, 300);
+      color:       $text-primary;
+      display:     block;
+      line-height: 1.0;
+    }
+
+    // Sous-titre / rôle
+    span:not(.terminal-prompt):not(.name):not(.at):not(.caret) {
+      @include prompt(11px, $accent);
+      display:        block;
+      margin-top:     $space-sm;
+      opacity:        0.8;
+      letter-spacing: 0.08em;
+
+      &::before {
+        content: '# ';
+        color:   $text-dim;
+      }
+    }
+  }
+}
+
+.terminal-prompt {
+  @include prompt(11px, $text-dim);
+  margin-bottom: $space-sm;
+  display:       block;
+
+  .at  { color: $accent; }
+  .caret {
+    display:    inline-block;
+    width:      7px;
+    height:     13px;
+    background: $accent;
+    margin-left: 2px;
+    vertical-align: middle;
+    opacity:    0;
+    animation:  blink 1.1s step-end infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+
+// ── Bio — style output de terminal ──────────
+.context-text {
+  color:       $text-muted;
+  font-size:   $fs-base;
+  line-height: $lh-base;
+  margin:      0 $space-xl $space-xl;
+  padding:     $space-md $space-lg;
+  border-left: 1px solid $accent-border;
+  background:  $bg-surface;
+  position:    relative;
+
+  // Indicateur de ligne en gutter
+  &::before {
+    content:    attr(data-line);
+    position:   absolute;
+    left:       -36px;
+    top:        $space-md;
+    @include    prompt(10px, $text-dim);
+    line-height: $lh-base;
+    text-align:  right;
+    width:       28px;
+    user-select: none;
+  }
+
+  p + p {
+    margin-top: $space-sm;
+  }
+}

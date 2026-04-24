@@ -1,0 +1,256 @@
+@use 'tokens' as *;
+
+// ═════════════════════════════════════════════
+//  _media.scss — Responsive breakpoints
+//  Breakpoints :
+//    sm  : ≤ 480px  (mobile portrait)
+//    md  : ≤ 768px  (mobile paysage / petite tablette)
+//    lg  : ≤ 1024px (tablette)
+// ═════════════════════════════════════════════
+
+// ── Tablette ────────────────────────────────
+@media (max-width: 1024px) {
+
+  .face-name-title {
+    padding: $space-xl $space-lg $space-md;
+  }
+
+  .context-text {
+    margin-left: $space-lg;
+  }
+
+  .projects-header {
+    padding: $space-xl $space-lg $space-md;
+  }
+
+  .project-list {
+    padding: 0 $space-lg $space-2xl;
+  }
+
+  .project-entry {
+    padding: $space-xl $space-lg;
+  }
+
+  .nav-bar {
+    padding: 0 $space-lg;
+  }
+
+}
+
+// ── Mobile paysage / petite tablette ────────
+@media (max-width: 768px) {
+
+  // Nav
+  .nav-bar {
+    padding: 0 $space-md;
+    height:  48px;
+
+    ul a {
+      padding: 5px 10px;
+    }
+  }
+
+  // Hero
+  .face-name-title {
+    flex-direction: column;
+    align-items:    flex-start;
+    padding:        $space-lg $space-md $space-sm;
+    gap:            $space-md;
+
+    .portrait {
+      width:  70px;
+      height: 70px;
+    }
+
+    .name-title {
+      font-size: 32px;
+    }
+  }
+
+  .context-text {
+    margin-left: $space-md;
+    max-width:   100%;
+    padding:     0 0 $space-lg $space-md;
+  }
+
+  // Section projets
+  .projects-header {
+    padding: $space-lg $space-md $space-sm;
+  }
+
+  .project-list {
+    padding: 0 $space-md $space-xl;
+  }
+
+  .project {
+    padding: $space-md;
+
+    .project-header img {
+      width:  40px;
+      height: 40px;
+    }
+
+    .project-name {
+      font-size: 16px;
+    }
+
+    .project-brief {
+      padding-left: 56px; // 40px img + 16px gap
+    }
+
+    .project-tag {
+      margin-left: 56px;
+    }
+  }
+
+  // Page projet
+  .project-entry {
+    padding: $space-lg $space-md;
+
+    .project-entry-header {
+      flex-direction: column;
+      gap:            $space-md;
+
+      img {
+        width:  100%;
+        height: 160px;
+        border-radius: 0;
+      }
+
+      .project-entry-title {
+        font-size: 28px;
+      }
+    }
+
+    .project-entry-carousel-imgs {
+      #carousel-img {
+        max-width:  100%;
+        max-height: 200px;
+      }
+    }
+  }
+
+  // Bouton retour
+  .back-btn {
+    padding: $space-sm $space-md;
+  }
+
+  // Me title
+  .me-title {
+    margin: $space-lg $space-md $space-sm;
+  }
+
+}
+
+// ── Mobile portrait ──────────────────────────
+@media (max-width: 480px) {
+
+  // Nav — masque les préfixes shell sur très petit écran
+  .nav-bar {
+    ul a::before {
+      display: none;
+    }
+
+    ul a {
+      padding:        4px 8px;
+      font-size:      10px;
+      letter-spacing: 0;
+    }
+  }
+
+  // Hero
+  .face-name-title {
+    padding: $space-md $space-sm $space-xs;
+
+    .name-title {
+      font-size: 26px;
+    }
+
+    .portrait {
+      width:  60px;
+      height: 60px;
+    }
+  }
+
+  .context-text {
+    margin-left:  $space-sm;
+    padding-left: $space-sm;
+    font-size:    13px;
+  }
+
+  // Projets
+  .project-list {
+    padding: 0 $space-sm $space-xl;
+    gap:     0;
+  }
+
+  .project {
+    padding: $space-sm $space-md;
+
+    .project-header {
+      gap: $space-sm;
+
+      img {
+        width:  36px;
+        height: 36px;
+      }
+
+      .project-name {
+        font-size: 14px;
+      }
+    }
+
+    .project-brief {
+      font-size:   11px;
+      padding-left: 48px; // 36px + 12px gap
+    }
+
+    .project-tag {
+      margin-left: 48px;
+      font-size:   9px;
+    }
+  }
+
+  // Page projet
+  .project-entry {
+    padding: $space-md $space-sm;
+
+    .project-entry-header img {
+      height: 120px;
+    }
+
+    .project-entry-title {
+      font-size: 22px;
+    }
+
+    .project-entry-carousel {
+      padding: $space-md $space-sm;
+
+      .project-entry-carousel-imgs {
+        gap: $space-sm;
+
+        #carousel-img {
+          max-height: 160px;
+        }
+
+        .slide-btn {
+          width:  24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .project-entry-skills {
+      .project-entry-skill-item {
+        font-size: 9px;
+      }
+    }
+  }
+
+  // Contact
+  .contact-block {
+    margin: 0 $space-sm $space-xs;
+    padding: $space-sm $space-md;
+  }
+
+}
