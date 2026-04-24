@@ -71,7 +71,7 @@ function makeDescription(lang, prog, project) {
 }
 const Project = withHeader((arg) => __awaiter(void 0, void 0, void 0, function* () {
     const lang = localStorage.getItem("lang") || "fr";
-    const project = yield urls.getJsonGithub('progs/' + arg + '/info.json');
+    let project = yield urls.getJsonGithub('progs/' + arg + '/info.json');
     return `
 	${yield Header.make()}
 	<button class="back-btn" onclick="history.back()">${textContent.backBtn[lang]}</button>

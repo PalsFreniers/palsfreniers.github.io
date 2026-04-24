@@ -33,11 +33,18 @@ class Router {
             if (pushState) {
                 history.pushState({ route, arg }, '', route);
             }
-            const DOM = yield this.routes[route].make(arg);
-            const app = document.getElementById('app');
-            if (app == null)
+            try {
+                const DOM = yield this.routes[route].make(arg);
+                const app = document.getElementById('app');
+                if (app == null)
+                    return;
+                app.innerHTML = DOM;
+            }
+            catch (e) {
+                console.warn(`error occured inside a warp`);
+                this.warp('/404');
                 return;
-            app.innerHTML = DOM;
+            }
             const links = document.getElementsByTagName('a');
             for (let i = 0; i < links.length; i++) {
                 const val = links[i];
