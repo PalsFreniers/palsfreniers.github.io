@@ -121,3 +121,16 @@
     margin:        $space-xs 0 0 60px;
   }
 }
+
+.project-wip {
+  &::after {
+    content:     'WIP';
+    position:    absolute;
+    top:         20px;
+    right:       50px;
+    @include     prompt(9px, $amber);
+    border:      1px solid $amber-subtle;
+    background:  $amber-subtle;
+    padding:     1px 6px;
+  }
+}

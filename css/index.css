@@ -435,6 +435,21 @@ a:hover {
   margin: 4px 0 0 60px;
 }
 
+.project-wip::after {
+  content: "WIP";
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  color: #e8a020;
+  text-transform: none;
+  border: 1px solid rgba(232, 160, 32, 0.1);
+  background: rgba(232, 160, 32, 0.1);
+  padding: 1px 6px;
+}
+
 .project-entry {
   padding: 40px 40px;
 }

@@ -21,8 +21,9 @@ function makeProjectList(lang) {
         for (let proj of projects.projects) {
             ret += `
 		<hr />
-		<div data-index="${i}" class="project" id="${proj.file}">
+		<div data-index="${i}" class="project " id="${proj.file}">
 			<div class="project-header">
+				<span class="${proj.wip ? "project-wip" : ""}"></span>
 				<img src="${urls.getFileUrl(`progs/${proj.file}/miniature.png`)}" />
 				<h3 class="project-name">${proj.name}</h3>
 			</div>
