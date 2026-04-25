@@ -40,8 +40,8 @@ export const whoami_now: LangText = makeLangText(
 // --- MYABILITY ---
 
 export const myability: LangText = makeLangText(
-    "C, C++, Python, Ada, x86_64 ASM · Linux/POSIX, Windows · Système, Réseaux, Cybersécurité · LaTeX, Markdown, Doxygen · Anglais C1",
-    "C, C++, Python, Ada, x86_64 ASM · Linux/POSIX, Windows · Systems, Networking, Cybersecurity · LaTeX, Markdown, Doxygen · English C1"
+    "C, C++98, Python, Ada, x86_64 ASM · C3, Zig, Rust, Go · Linux/POSIX, ELF/Multiboot2 · Système bas niveau, Noyau OS, Machines virtuelles · Réseaux, WebSocket, HTTP/REST · Analyse binaire, Cybersécurité · LaTeX, Markdown, Doxygen · Anglais C1",
+    "C, C++98, Python, Ada, x86_64 ASM · C3, Zig, Rust, Go · Linux/POSIX, ELF/Multiboot2 · Low-level Systems, OS Kernel, Virtual Machines · Networking, WebSocket, HTTP/REST · Binary Analysis, Cybersecurity · LaTeX, Markdown, Doxygen · English C1"
 );
 
 // --- MYFUTURE ---
