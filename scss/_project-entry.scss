@@ -8,7 +8,7 @@
     @include flex-row($gap: $space-xl, $align: center, $justify: center);
     margin-bottom: $space-xl;
     padding-bottom: $space-xl;
-    border-bottom: 1px solid $bg-border;
+    border-bottom: 1px solid var(--bg-border);
 
     img {
       width:      160px;
@@ -16,7 +16,7 @@
       object-fit: cover;
       flex-shrink: 0;
       filter:     grayscale(20%) contrast(1.05);
-      border:     1px solid $bg-border;
+      border:     1px solid var(--bg-border);
     }
 
     //.project-entry-meta {
@@ -25,7 +25,7 @@
 
     // Fil d'Ariane style path
     .project-entry-breadcrumb {
-      @include prompt(10px, $text-dim);
+      @include prompt(10px, var(--text-dim));
       margin-bottom: $space-sm;
       display: block;
     }
@@ -36,10 +36,10 @@
 
       .project-entry-title {
         @include display-mono(32px, 300);
-        color:      $text-primary;
+        color:      var(--text-primary);
         transition: color $t-fast;
 
-        &:hover { color: $accent; }
+        &:hover { color: var(--accent); }
       }
     }
   }
@@ -48,28 +48,28 @@
   .desc-title,
   .skill-title {
     @include shell-label(10px);
-    color:        $text-muted;
+    color:        var(--text-muted);
     margin-bottom: $space-md;
     padding-bottom: $space-xs;
-    border-bottom: 1px solid $bg-border;
+    border-bottom: 1px solid var(--bg-border);
     display:      block;
 
     // Icône prompt
     &::before {
       content: '▸ ';
-      color:   $accent;
+      color:   var(--accent);
       font-style: normal;
     }
   }
 
   // ── Description ───────────────────────────
   .project-entry-description {
-    @include prompt(13px, $text-muted);
+    @include prompt(13px, var(--text-muted));
     line-height:   1.8;
     margin-bottom: $space-xl;
     padding:       $space-md $space-lg;
-    background:    $bg-surface;
-    border-left:   2px solid $accent-border;
+    background:    var(--bg-surface);
+    border-left:   2px solid var(--accent-border);
   }
 
   // ── Skills ────────────────────────────────
@@ -84,21 +84,21 @@
     .project-entry-skill-item {
       @include prompt($fs-xs);
       padding:  2px 10px;
-      border:   1px solid $accent-border;
-      color:    $accent;
-      background: $accent-subtle;
+      border:   1px solid var(--accent-border);
+      color:    var(--accent);
+      background: var(--accent-subtle);
 
       &::before {
         content: '+ ';
-        color:   $text-dim;
+        color:   var(--text-dim);
       }
     }
   }
 
   // ── Carousel ──────────────────────────────
   .project-entry-carousel {
-    background:     $bg-surface;
-    border:         1px solid $bg-border;
+    background:     var(--bg-surface);
+    border:         1px solid var(--bg-border);
     display:        flex;
     flex-direction: column;
     align-items:    center;
@@ -107,12 +107,12 @@
 
     .project-entry-carousel-title {
       @include shell-label(10px);
-      color:    $text-muted;
+      color:    var(--text-muted);
       width:    100%;
 
       &::before {
         content: '▸ ';
-        color:   $accent;
+        color:   var(--accent);
       }
     }
 
@@ -124,21 +124,21 @@
         max-width:  256px;
         max-height: 256px;
         cursor:     zoom-in;
-        border:     1px solid $bg-border;
+        border:     1px solid var(--bg-border);
         transition: border-color $t-fast;
         filter:     contrast(1.05);
 
         &:hover {
-          border-color: $accent-border;
+          border-color: var(--accent-border);
         }
       }
 
       .slide-btn {
         width:      28px;
         height:     28px;
-        border:     1px solid $bg-border;
-        background: $bg-raised;
-        color:      $text-muted;
+        border:     1px solid var(--bg-border);
+        background: var(--bg-raised);
+        color:      var(--text-muted);
         cursor:     pointer;
         flex-shrink: 0;
         transition: border-color $t-fast, color $t-fast, background $t-fast;
@@ -149,9 +149,9 @@
         justify-content: center;
 
         &:hover {
-          border-color: $accent-border;
-          color:        $accent;
-          background:   $accent-subtle;
+          border-color: var(--accent-border);
+          color:        var(--accent);
+          background:   var(--accent-subtle);
         }
       }
     }
@@ -186,8 +186,8 @@
         max-width:   90vw;
         max-height:  85vh;
         object-fit:  contain;
-        box-shadow:  0 0 80px rgba(0, 0, 0, 0.8), 0 0 1px $accent-border;
-        border:      1px solid $bg-border;
+        box-shadow:  0 0 80px rgba(0, 0, 0, 0.8), 0 0 1px var(--accent-border);
+        border:      1px solid var(--bg-border);
       }
     }
 
@@ -197,9 +197,9 @@
       right:      -$space-md;
       width:      28px;
       height:     28px;
-      border:     1px solid $accent-border;
-      background: $bg-surface;
-      color:      $accent;
+      border:     1px solid var(--accent-border);
+      background: var(--bg-surface);
+      color:      var(--accent);
       cursor:     pointer;
       font-size:  12px;
       font-family: $font-mono;
@@ -208,11 +208,11 @@
       justify-content: center;
       transition: background $t-fast;
 
-      &:hover { background: $accent-subtle; }
+      &:hover { background: var(--accent-subtle); }
     }
   }
 }
 
 .carousel-counter {
-  @include mono(10px, $text-dim);
+  @include mono(10px, var(--text-dim));
 }

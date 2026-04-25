@@ -16,14 +16,14 @@ html {
 }
 
 ::selection {
-  background: $accent-subtle;
-  color:      $accent;
+  background: var(--accent-subtle);
+  color:      var(--accent);
 }
 
 body {
-  background:  $bg-void;
+  background:  var(--bg-void);
   font-family: $font-sans;
-  color:       $text-primary;
+  color:       var(--text-primary);
   font-size:   $fs-base;
   line-height: $lh-base;
   min-height:  100vh;
@@ -72,7 +72,7 @@ a {
   text-decoration: none;
   
   &:hover {
-    color: $accent;
+    color: var(--accent);
   }
 }
 // Scrollbar style terminal
@@ -80,11 +80,11 @@ a {
   width: 4px;
 }
 ::-webkit-scrollbar-track, ::-moz-scrollbar-track {
-  background: $bg-void;
+  background: var(--bg-void);
 }
 ::-webkit-scrollbar-thumb, ::-moz-scrollbar-thumb {
-  background: $bg-border;
-  &:hover { background: $accent-border; }
+  background: var(--bg-border);
+  &:hover { background: var(--accent-border); }
 }
 
 // Lignes de grille de fond très discrètes

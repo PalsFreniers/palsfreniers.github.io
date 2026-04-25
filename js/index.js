@@ -4,6 +4,7 @@ import Projects from './pages/projects.js';
 import Contact from './pages/contact.js';
 import Project from './pages/project.js';
 import * as Errors from './pages/errors.js';
+import { initTheme } from './component/theme.js';
 export const nav = new Router();
 nav.add('/', Index);
 nav.add('/home', Index);
@@ -16,6 +17,10 @@ nav.add('/500', Errors.E500);
 if (!localStorage.getItem("lang")) {
     localStorage.setItem("lang", "fr");
 }
+if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", "dark");
+}
 requestAnimationFrame(() => {
     nav.warp(document.location.pathname);
+    initTheme();
 });

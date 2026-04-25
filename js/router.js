@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { toggleTheme } from './component/theme.js';
 class Router {
     constructor() {
         this.routes = new Map();
@@ -40,6 +41,9 @@ class Router {
                     return;
                 app.innerHTML = DOM;
                 window.scrollTo(0, 0);
+                const themeBtn = document.getElementById('theme-toggle');
+                if (themeBtn)
+                    themeBtn.addEventListener('click', toggleTheme);
             }
             catch (e) {
                 console.warn(`error occured inside a warp`);

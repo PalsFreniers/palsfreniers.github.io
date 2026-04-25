@@ -12,7 +12,7 @@
     height:      80px;
     flex-shrink: 0;
     object-fit:  cover;
-    border:      1px solid $accent-border;
+    border:      1px solid var(--accent-border);
     filter:      grayscale(20%) contrast(1.05);
     position:    relative;
     transition:  filter $t-normal, border-color $t-normal;
@@ -25,13 +25,13 @@
       right:       -4px;
       width:       12px;
       height:      12px;
-      border-right: 1px solid $accent;
-      border-bottom: 1px solid $accent;
+      border-right: 1px solid var(--accent);
+      border-bottom: 1px solid var(--accent);
     }
 
     &:hover {
       filter:       grayscale(0%) contrast(1.1);
-      border-color: $accent;
+      border-color: var(--accent);
     }
   }
 
@@ -43,14 +43,14 @@
     // Nom principal — grand, monospace, léger
     .name {
       @include display-mono(38px, 300);
-      color:       $text-primary;
+      color:       var(--text-primary);
       display:     block;
       line-height: 1.0;
     }
 
     // Sous-titre / rôle
     span:not(.terminal-prompt):not(.name):not(.at):not(.caret) {
-      @include prompt(11px, $accent);
+      @include prompt(11px, var(--accent));
       display:        block;
       margin-top:     $space-sm;
       opacity:        0.8;
@@ -58,23 +58,23 @@
 
       &::before {
         content: '# ';
-        color:   $text-dim;
+        color:   var(--text-dim);
       }
     }
   }
 }
 
 .terminal-prompt {
-  @include prompt(11px, $text-dim);
+  @include prompt(11px, var(--text-dim));
   margin-bottom: $space-sm;
   display:       block;
 
-  .at  { color: $accent; }
+  .at  { color: var(--accent); }
   .caret {
     display:    inline-block;
     width:      7px;
     height:     13px;
-    background: $accent;
+    background: var(--accent);
     margin-left: 2px;
     vertical-align: middle;
     opacity:    0;
@@ -89,13 +89,13 @@
 
 // ── Bio — style output de terminal ──────────
 .context-text {
-  color:       $text-muted;
+  color:       var(--text-muted);
   font-size:   $fs-base;
   line-height: $lh-base;
   margin:      0 $space-xl $space-xl;
   padding:     $space-md $space-lg;
-  border-left: 1px solid $accent-border;
-  background:  $bg-surface;
+  border-left: 1px solid var(--accent-border);
+  background:  var(--bg-surface);
   position:    relative;
 
   // Indicateur de ligne en gutter
@@ -104,7 +104,7 @@
     position:   absolute;
     left:       -36px;
     top:        $space-md;
-    @include    prompt(10px, $text-dim);
+    @include    prompt(10px, var(--text-dim));
     line-height: $lh-base;
     text-align:  right;
     width:       28px;

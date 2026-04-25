@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────
 
 /// Étiquette monospace — style prompt de terminal
-@mixin prompt($size: 11px, $color: v.$text-muted) {
+@mixin prompt($size: 11px, $color: var(--text-muted)) {
   font-family:    v.$font-mono;
   font-size:      $size;
   letter-spacing: 0.04em;
@@ -19,7 +19,7 @@
   font-size:      $size;
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  color:          v.$text-muted;
+  color:          var(--text-muted);
 }
 
 /// Flex row utilitaire
@@ -41,7 +41,7 @@
   width:         $w;
   height:        $h;
   background:    v.$accent;
-  box-shadow:    0 0 8px v.$accent;
+  box-shadow:    0 0 8px var(--accent);
   transition:    transform v.$t-fast;
 }
 
@@ -70,7 +70,7 @@
     content:    '';
     flex:       1;
     height:     1px;
-    background: v.$bg-border;
+    background: var(--bg-border);
   }
 
   &::before { flex: 0 0 0; }
@@ -87,7 +87,7 @@
   );
 }
 
-@mixin mono($size: 12px, $color: v.$text-muted) {
+@mixin mono($size: 12px, $color: var(--text-muted)) {
   font-family:    v.$font-mono;
   font-size:      $size;
   letter-spacing: 0.04em;

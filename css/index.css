@@ -1,5 +1,35 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap");
+:root {
+  --bg-void: #070809;
+  --bg-surface: #0d1117;
+  --bg-raised: #111820;
+  --bg-border: #1c2530;
+  --text-primary: #d6e4f0;
+  --text-muted: #4a6278;
+  --text-dim: #2a3d50;
+  --accent: #00d4aa;
+  --accent-subtle: rgba(0, 212, 170, 0.08);
+  --accent-badge: rgba(0, 212, 170, 0.1);
+  --accent-border: rgba(0, 212, 170, 0.2);
+  --amber: #e8a020;
+  --amber-subtle: rgba(232, 160, 32, 0.1);
+}
+
+[data-theme=light] {
+  --bg-void: #f4f6f8;
+  --bg-surface: #ffffff;
+  --bg-raised: #e8ecf0;
+  --bg-border: #d0d8e0;
+  --text-primary: #0d1117;
+  --text-muted: #4a6278;
+  --text-dim: #8fa0b0;
+  --accent: #00a882;
+  --accent-subtle: rgba(0, 168, 130, 0.08);
+  --accent-badge: rgba(0, 168, 130, 0.10);
+  --accent-border: rgba(0, 168, 130, 0.25);
+}
+
 *,
 *::before,
 *::after {
@@ -13,14 +43,14 @@ html {
 }
 
 ::selection {
-  background: rgba(0, 212, 170, 0.08);
-  color: #00d4aa;
+  background: var(--accent-subtle);
+  color: var(--accent);
 }
 
 body {
-  background: #070809;
+  background: var(--bg-void);
   font-family: "DM Sans", sans-serif;
-  color: #d6e4f0;
+  color: var(--text-primary);
   font-size: 14px;
   line-height: 1.75;
   min-height: 100vh;
@@ -54,7 +84,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #00d4aa;
+  color: var(--accent);
 }
 
 ::-webkit-scrollbar, ::-moz-scrollbar {
@@ -62,14 +92,14 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track, ::-moz-scrollbar-track {
-  background: #070809;
+  background: var(--bg-void);
 }
 
 ::-webkit-scrollbar-thumb, ::-moz-scrollbar-thumb {
-  background: #1c2530;
+  background: var(--bg-border);
 }
 ::-webkit-scrollbar-thumb:hover, ::-moz-scrollbar-thumb:hover {
-  background: rgba(0, 212, 170, 0.2);
+  background: var(--accent-border);
 }
 
 .grid-bg {
@@ -86,9 +116,9 @@ a:hover {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: rgba(7, 8, 9, 0.92);
+  background: rgba(var(--bg-void), 0.92);
   backdrop-filter: blur(16px) saturate(1.2);
-  border-bottom: 1px solid #1c2530;
+  border-bottom: 1px solid var(--bg-border);
   padding: 0 40px;
   height: 56px;
   position: sticky;
@@ -102,20 +132,20 @@ a:hover {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 170, 0.2) 20%, rgba(0, 212, 170, 0.2) 80%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, var(--accent-border) 20%, var(--accent-border) 80%, transparent 100%);
 }
 .nav-bar .nav-brand {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: #00d4aa;
+  color: var(--accent);
   text-transform: none;
   opacity: 0.7;
   letter-spacing: 0.02em;
 }
 .nav-bar .nav-brand::before {
   content: "~/";
-  color: #2a3d50;
+  color: var(--text-dim);
 }
 .nav-bar ul {
   display: flex;
@@ -129,9 +159,9 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
-  color: #d6e4f0;
+  color: var(--text-primary);
   text-decoration: none;
   padding: 6px 12px;
   border: 1px solid transparent;
@@ -140,27 +170,27 @@ a:hover {
 }
 .nav-bar ul a li::before {
   content: "./";
-  color: #4a6278;
+  color: var(--text-muted);
 }
 .nav-bar ul a:hover {
-  color: #00d4aa;
-  border-color: rgba(0, 212, 170, 0.2);
-  background: rgba(0, 212, 170, 0.08);
+  color: var(--accent);
+  border-color: var(--accent-border);
+  background: var(--accent-subtle);
 }
 .nav-bar ul a.active {
-  color: #00d4aa;
-  background: rgba(0, 212, 170, 0.08);
-  border-color: rgba(0, 212, 170, 0.2);
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border-color: var(--accent-border);
 }
 .nav-bar select {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   background: transparent;
-  border: 1px solid #1c2530;
-  color: #4a6278;
+  border: 1px solid var(--bg-border);
+  color: var(--text-muted);
   font-family: "JetBrains Mono", "Fira Code", monospace;
   padding: 4px 10px;
   cursor: pointer;
@@ -169,12 +199,29 @@ a:hover {
   -webkit-appearance: none;
 }
 .nav-bar select:hover {
-  border-color: rgba(0, 212, 170, 0.2);
-  color: #00d4aa;
+  border-color: var(--accent-border);
+  color: var(--accent);
 }
 .nav-bar select option {
-  background: #0d1117;
-  color: #d6e4f0;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+.nav-bar .theme-toggle {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--bg-border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+.nav-bar .theme-toggle:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
 }
 
 .face-name-title {
@@ -191,7 +238,7 @@ a:hover {
   height: 80px;
   flex-shrink: 0;
   object-fit: cover;
-  border: 1px solid rgba(0, 212, 170, 0.2);
+  border: 1px solid var(--accent-border);
   filter: grayscale(20%) contrast(1.05);
   position: relative;
   transition: filter 0.28s ease, border-color 0.28s ease;
@@ -203,12 +250,12 @@ a:hover {
   right: -4px;
   width: 12px;
   height: 12px;
-  border-right: 1px solid #00d4aa;
-  border-bottom: 1px solid #00d4aa;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
 }
 .face-name-title .portrait:hover {
   filter: grayscale(0%) contrast(1.1);
-  border-color: #00d4aa;
+  border-color: var(--accent);
 }
 .face-name-title .name-title {
   padding-top: 4px;
@@ -219,7 +266,7 @@ a:hover {
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #d6e4f0;
+  color: var(--text-primary);
   display: block;
   line-height: 1;
 }
@@ -227,7 +274,7 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
-  color: #00d4aa;
+  color: var(--accent);
   text-transform: none;
   display: block;
   margin-top: 8px;
@@ -236,26 +283,26 @@ a:hover {
 }
 .face-name-title .name-title span:not(.terminal-prompt):not(.name):not(.at):not(.caret)::before {
   content: "# ";
-  color: #2a3d50;
+  color: var(--text-dim);
 }
 
 .terminal-prompt {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
-  color: #2a3d50;
+  color: var(--text-dim);
   text-transform: none;
   margin-bottom: 8px;
   display: block;
 }
 .terminal-prompt .at {
-  color: #00d4aa;
+  color: var(--accent);
 }
 .terminal-prompt .caret {
   display: inline-block;
   width: 7px;
   height: 13px;
-  background: #00d4aa;
+  background: var(--accent);
   margin-left: 2px;
   vertical-align: middle;
   opacity: 0;
@@ -271,13 +318,13 @@ a:hover {
   }
 }
 .context-text {
-  color: #4a6278;
+  color: var(--text-muted);
   font-size: 14px;
   line-height: 1.75;
   margin: 0 40px 40px;
   padding: 16px 24px;
-  border-left: 1px solid rgba(0, 212, 170, 0.2);
-  background: #0d1117;
+  border-left: 1px solid var(--accent-border);
+  background: var(--bg-surface);
   position: relative;
 }
 .context-text::before {
@@ -288,7 +335,7 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: #2a3d50;
+  color: var(--text-dim);
   text-transform: none;
   line-height: 1.75;
   text-align: right;
@@ -312,20 +359,20 @@ a:hover {
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  color: #4a6278;
-  color: #4a6278;
+  color: var(--text-muted);
+  color: var(--text-muted);
   white-space: nowrap;
   flex-shrink: 0;
 }
 .projects-header h2::before {
   content: "$ ls ";
-  color: #2a3d50;
+  color: var(--text-dim);
 }
 .projects-header::after {
   content: "";
   flex: 1;
   height: 1px;
-  background: #1c2530;
+  background: var(--bg-border);
 }
 
 .project-list {
@@ -337,8 +384,8 @@ a:hover {
 
 .project {
   padding: 16px 24px;
-  border: 1px solid #1c2530;
-  background: #0d1117;
+  border: 1px solid var(--bg-border);
+  background: var(--bg-surface);
   cursor: pointer;
   position: relative;
   transition: background 0.18s ease, border-color 0.18s ease;
@@ -352,7 +399,7 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   user-select: none;
 }
@@ -365,18 +412,18 @@ a:hover {
   width: 2px;
   height: 70%;
   background: #00d4aa;
-  box-shadow: 0 0 8px #00d4aa;
+  box-shadow: 0 0 8px var(--accent);
   transition: transform 0.18s ease;
 }
 .project:hover {
-  background: #111820;
-  border-color: rgba(0, 212, 170, 0.2);
+  background: var(--bg-raised);
+  border-color: var(--accent-border);
 }
 .project:hover::before {
   transform: translateY(-50%) scaleY(1);
 }
 .project:hover .project-name {
-  color: #00d4aa;
+  color: var(--accent);
 }
 .project + .project {
   border-top-color: transparent;
@@ -395,12 +442,12 @@ a:hover {
   object-fit: cover;
   flex-shrink: 0;
   filter: grayscale(30%);
-  border: 1px solid #1c2530;
+  border: 1px solid var(--bg-border);
   transition: filter 0.18s ease;
 }
 .project:hover .project .project-header img {
   filter: grayscale(0%);
-  border-color: rgba(0, 212, 170, 0.2);
+  border-color: var(--accent-border);
 }
 .project .project-header .project-name {
   font-family: "JetBrains Mono", "Fira Code", monospace;
@@ -408,14 +455,14 @@ a:hover {
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #d6e4f0;
+  color: var(--text-primary);
   transition: color 0.18s ease;
 }
 .project .project-brief {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   margin-top: 4px;
   padding-left: 60px;
@@ -425,13 +472,13 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   display: inline-block;
   padding: 2px 8px;
-  border: 1px solid rgba(0, 212, 170, 0.2);
-  background: rgba(0, 212, 170, 0.1);
-  color: #00d4aa;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-badge);
+  color: var(--accent);
   margin: 4px 0 0 60px;
 }
 
@@ -443,10 +490,10 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 9px;
   letter-spacing: 0.04em;
-  color: #e8a020;
+  color: var(--amber);
   text-transform: none;
-  border: 1px solid rgba(232, 160, 32, 0.1);
-  background: rgba(232, 160, 32, 0.1);
+  border: 1px solid var(--amber-subtle);
+  background: var(--amber-subtle);
   padding: 1px 6px;
 }
 
@@ -461,7 +508,7 @@ a:hover {
   gap: 40px;
   margin-bottom: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid #1c2530;
+  border-bottom: 1px solid var(--bg-border);
 }
 .project-entry .project-entry-header img {
   width: 160px;
@@ -469,13 +516,13 @@ a:hover {
   object-fit: cover;
   flex-shrink: 0;
   filter: grayscale(20%) contrast(1.05);
-  border: 1px solid #1c2530;
+  border: 1px solid var(--bg-border);
 }
 .project-entry .project-entry-header .project-entry-breadcrumb {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: #2a3d50;
+  color: var(--text-dim);
   text-transform: none;
   margin-bottom: 8px;
   display: block;
@@ -490,11 +537,11 @@ a:hover {
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #d6e4f0;
+  color: var(--text-primary);
   transition: color 0.18s ease;
 }
 .project-entry .project-entry-header a .project-entry-title:hover {
-  color: #00d4aa;
+  color: var(--accent);
 }
 .project-entry .desc-title,
 .project-entry .skill-title {
@@ -502,30 +549,30 @@ a:hover {
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  color: #4a6278;
-  color: #4a6278;
+  color: var(--text-muted);
+  color: var(--text-muted);
   margin-bottom: 16px;
   padding-bottom: 4px;
-  border-bottom: 1px solid #1c2530;
+  border-bottom: 1px solid var(--bg-border);
   display: block;
 }
 .project-entry .desc-title::before,
 .project-entry .skill-title::before {
   content: "▸ ";
-  color: #00d4aa;
+  color: var(--accent);
   font-style: normal;
 }
 .project-entry .project-entry-description {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   line-height: 1.8;
   margin-bottom: 40px;
   padding: 16px 24px;
-  background: #0d1117;
-  border-left: 2px solid rgba(0, 212, 170, 0.2);
+  background: var(--bg-surface);
+  border-left: 2px solid var(--accent-border);
 }
 .project-entry .project-entry-skills {
   list-style: none;
@@ -539,20 +586,20 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   padding: 2px 10px;
-  border: 1px solid rgba(0, 212, 170, 0.2);
-  color: #00d4aa;
-  background: rgba(0, 212, 170, 0.08);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-subtle);
 }
 .project-entry .project-entry-skills .project-entry-skill-item::before {
   content: "+ ";
-  color: #2a3d50;
+  color: var(--text-dim);
 }
 .project-entry .project-entry-carousel {
-  background: #0d1117;
-  border: 1px solid #1c2530;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -564,13 +611,13 @@ a:hover {
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  color: #4a6278;
-  color: #4a6278;
+  color: var(--text-muted);
+  color: var(--text-muted);
   width: 100%;
 }
 .project-entry .project-entry-carousel .project-entry-carousel-title::before {
   content: "▸ ";
-  color: #00d4aa;
+  color: var(--accent);
 }
 .project-entry .project-entry-carousel .project-entry-carousel-imgs {
   display: flex;
@@ -584,19 +631,19 @@ a:hover {
   max-width: 256px;
   max-height: 256px;
   cursor: zoom-in;
-  border: 1px solid #1c2530;
+  border: 1px solid var(--bg-border);
   transition: border-color 0.18s ease;
   filter: contrast(1.05);
 }
 .project-entry .project-entry-carousel .project-entry-carousel-imgs #carousel-img:hover {
-  border-color: rgba(0, 212, 170, 0.2);
+  border-color: var(--accent-border);
 }
 .project-entry .project-entry-carousel .project-entry-carousel-imgs .slide-btn {
   width: 28px;
   height: 28px;
-  border: 1px solid #1c2530;
-  background: #111820;
-  color: #4a6278;
+  border: 1px solid var(--bg-border);
+  background: var(--bg-raised);
+  color: var(--text-muted);
   cursor: pointer;
   flex-shrink: 0;
   transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
@@ -607,9 +654,9 @@ a:hover {
   justify-content: center;
 }
 .project-entry .project-entry-carousel .project-entry-carousel-imgs .slide-btn:hover {
-  border-color: rgba(0, 212, 170, 0.2);
-  color: #00d4aa;
-  background: rgba(0, 212, 170, 0.08);
+  border-color: var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-subtle);
 }
 .project-entry .lightbox {
   display: none;
@@ -639,8 +686,8 @@ a:hover {
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8), 0 0 1px rgba(0, 212, 170, 0.2);
-  border: 1px solid #1c2530;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8), 0 0 1px var(--accent-border);
+  border: 1px solid var(--bg-border);
 }
 .project-entry .lightbox-close {
   position: absolute;
@@ -648,9 +695,9 @@ a:hover {
   right: -16px;
   width: 28px;
   height: 28px;
-  border: 1px solid rgba(0, 212, 170, 0.2);
-  background: #0d1117;
-  color: #00d4aa;
+  border: 1px solid var(--accent-border);
+  background: var(--bg-surface);
+  color: var(--accent);
   cursor: pointer;
   font-size: 12px;
   font-family: "JetBrains Mono", "Fira Code", monospace;
@@ -660,14 +707,14 @@ a:hover {
   transition: background 0.18s ease;
 }
 .project-entry .lightbox-close:hover {
-  background: rgba(0, 212, 170, 0.08);
+  background: var(--accent-subtle);
 }
 
 .carousel-counter {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: #2a3d50;
+  color: var(--text-dim);
 }
 
 @media (max-width: 1024px) {
@@ -848,11 +895,11 @@ a:hover {
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  color: #4a6278;
-  color: #00d4aa;
+  color: var(--text-muted);
+  color: var(--accent);
   margin: 40px 40px 16px;
   padding-bottom: 4px;
-  border-bottom: 1px solid #1c2530;
+  border-bottom: 1px solid var(--bg-border);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -860,20 +907,20 @@ a:hover {
 }
 .me-title::before {
   content: "▸ ";
-  color: #00d4aa;
+  color: var(--accent);
   flex-shrink: 0;
 }
 .me-title::after {
   content: "";
   flex: 1;
   height: 1px;
-  background: #1c2530;
+  background: var(--bg-border);
 }
 
 .contact-block {
   padding: 16px 24px;
-  background: #0d1117;
-  border: 1px solid #1c2530;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
   margin: 0 40px 4px;
   display: flex;
   flex-direction: column;
@@ -881,22 +928,22 @@ a:hover {
   transition: border-color 0.18s ease;
 }
 .contact-block:hover {
-  border-color: rgba(0, 212, 170, 0.2);
+  border-color: var(--accent-border);
 }
 .contact-block .contact-label {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: #2a3d50;
+  color: var(--text-dim);
   text-transform: none;
 }
 .contact-block .contact-value {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: #d6e4f0;
+  color: var(--text-primary);
   text-transform: none;
-  color: #00d4aa;
+  color: var(--accent);
 }
 
 @keyframes fadeUp {
@@ -932,14 +979,14 @@ a:hover {
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #2a3d50;
+  color: var(--text-dim);
   display: block;
 }
 .error-block .error-msg {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   margin-top: 16px;
   display: block;
@@ -949,10 +996,10 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   background: transparent;
   border: none;
-  color: #4a6278;
+  color: var(--text-muted);
   cursor: pointer;
   padding: 16px 40px;
   display: block;
@@ -960,15 +1007,15 @@ a:hover {
 }
 .back-btn::before {
   content: "← ";
-  color: #2a3d50;
+  color: var(--text-dim);
 }
 .back-btn:hover {
-  color: #00d4aa;
+  color: var(--accent);
 }
 
 .page-header {
   padding: 40px 40px 24px;
-  border-bottom: 1px solid #1c2530;
+  border-bottom: 1px solid var(--bg-border);
   margin-bottom: 16px;
 }
 .page-header-title {
@@ -977,10 +1024,10 @@ a:hover {
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #d6e4f0;
+  color: var(--text-primary);
 }
 .page-header-title .page-header-prompt {
-  color: #00d4aa;
+  color: var(--accent);
   margin-right: 8px;
   opacity: 0.7;
 }
@@ -988,14 +1035,14 @@ a:hover {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #4a6278;
+  color: var(--text-muted);
   text-transform: none;
   margin-top: 8px;
   padding-left: 4px;
 }
 .page-header-sub::before {
   content: "# ";
-  color: #2a3d50;
+  color: var(--text-dim);
 }
 
 /*# sourceMappingURL=index.css.map */

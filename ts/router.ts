@@ -1,4 +1,5 @@
 import Page from './page.js';
+import { toggleTheme } from './component/theme.js';
 
 class Router {
 	routes: Map<string, Page> = new Map();
@@ -35,6 +36,8 @@ class Router {
 			if(app == null) return;
 			app.innerHTML = DOM;
 			window.scrollTo(0, 0);
+			const themeBtn = document.getElementById('theme-toggle');
+			if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
 		} catch(e: any) {
 			console.warn(`error occured inside a warp`);
 			this.warp('/404');

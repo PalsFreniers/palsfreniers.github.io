@@ -63,3 +63,33 @@ $radius-large: 4px;
 $t-snap:   0.1s ease;
 $t-fast:   0.18s ease;
 $t-normal: 0.28s ease;
+
+:root {
+  --bg-void:       #{$bg-void};
+  --bg-surface:    #{$bg-surface};
+  --bg-raised:     #{$bg-raised};
+  --bg-border:     #{$bg-border};
+  --text-primary:  #{$text-primary};
+  --text-muted:    #{$text-muted};
+  --text-dim:      #{$text-dim};
+  --accent:        #{$accent};
+  --accent-subtle: #{$accent-subtle};
+  --accent-badge:  #{$accent-badge};
+  --accent-border: #{$accent-border};
+  --amber:         #{$amber};
+  --amber-subtle:  #{$amber-subtle};
+}
+
+[data-theme="light"] {
+  --bg-void:       #f4f6f8;
+  --bg-surface:    #ffffff;
+  --bg-raised:     #e8ecf0;
+  --bg-border:     #d0d8e0;
+  --text-primary:  #0d1117;
+  --text-muted:    #4a6278;
+  --text-dim:      #8fa0b0;
+  --accent:        #00a882;
+  --accent-subtle: rgba(0, 168, 130, 0.08);
+  --accent-badge:  rgba(0, 168, 130, 0.10);
+  --accent-border: rgba(0, 168, 130, 0.25);
+}

@@ -2,9 +2,9 @@
 
 .nav-bar {
   @include flex-row($justify: space-between);
-  background:      rgba($bg-void, 0.92);
+  background:      rgba(var(--bg-void), 0.92);
   backdrop-filter: blur(16px) saturate(1.2);
-  border-bottom:   1px solid $bg-border;
+  border-bottom:   1px solid var(--bg-border);
   padding:         0 $space-xl;
   height:          $nav-height;
   position:        sticky;
@@ -22,21 +22,21 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      $accent-border 20%,
-      $accent-border 80%,
+      var(--accent-border) 20%,
+      var(--accent-border) 80%,
       transparent 100%
     );
   }
 
   // Logo / nom — style prompt
   .nav-brand {
-    @include prompt(13px, $accent);
+    @include prompt(13px, var(--accent));
     opacity: 0.7;
     letter-spacing: 0.02em;
 
     &::before {
       content: '~/';
-      color:   $text-dim;
+      color:   var(--text-dim);
     }
   }
 
@@ -46,7 +46,7 @@
 
     a {
       @include prompt(11px);
-      color:           $text-primary;
+      color:           var(--text-primary);
       text-decoration: none;
       padding:         6px 12px;
       border:          1px solid transparent;
@@ -57,20 +57,20 @@
         // Préfixe shell discret
         &::before {
           content:  './';
-          color:    $text-muted;
+          color:    var(--text-muted);
         }
       }
 
       &:hover {
-        color:        $accent;
-        border-color: $accent-border;
-        background:   $accent-subtle;
+        color:        var(--accent);
+        border-color: var(--accent-border);
+        background:   var(--accent-subtle);
       }
 
       &.active {
-        color:        $accent;
-        background:   $accent-subtle;
-        border-color: $accent-border;
+        color:        var(--accent);
+        background:   var(--accent-subtle);
+        border-color: var(--accent-border);
       }
     }
   }
@@ -78,8 +78,8 @@
   select {
     @include prompt(11px);
     background:   transparent;
-    border:       1px solid $bg-border;
-    color:        $text-muted;
+    border:       1px solid var(--bg-border);
+    color:        var(--text-muted);
     font-family:  $font-mono;
     padding:      4px 10px;
     cursor:       pointer;
@@ -88,13 +88,32 @@
     -webkit-appearance: none;
 
     &:hover {
-      border-color: $accent-border;
-      color:        $accent;
+      border-color: var(--accent-border);
+      color:        var(--accent);
     }
 
     option {
-      background: $bg-surface;
-      color:      $text-primary;
+      background: var(--bg-surface);
+      color:      var(--text-primary);
     }
   }
+
+  .theme-toggle {
+  width:      28px;
+  height:     28px;
+  border:     1px solid var(--bg-border);
+  background: transparent;
+  color:      var(--text-muted);
+  cursor:     pointer;
+  font-size:  14px;
+  display:    flex;
+  align-items:     center;
+  justify-content: center;
+  transition: border-color $t-fast, color $t-fast;
+
+  &:hover {
+    border-color: var(--accent-border);
+    color:        var(--accent);
+  }
+}
 }
