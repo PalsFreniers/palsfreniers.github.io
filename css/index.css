@@ -182,6 +182,9 @@ a:hover {
   background: var(--accent-subtle);
   border-color: var(--accent-border);
 }
+.nav-bar .nav-buttons {
+  display: flex;
+}
 .nav-bar select {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 11px;

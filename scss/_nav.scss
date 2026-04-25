@@ -20,11 +20,11 @@
     right:      0;
     height:     1px;
     background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--accent-border) 20%,
-      var(--accent-border) 80%,
-      transparent 100%
+    90deg,
+    transparent 0%,
+    var(--accent-border) 20%,
+    var(--accent-border) 80%,
+    transparent 100%
     );
   }
 
@@ -75,6 +75,11 @@
     }
   }
 
+  .nav-buttons {
+    display: flex;
+  }
+
+
   select {
     @include prompt(11px);
     background:   transparent;
@@ -99,21 +104,21 @@
   }
 
   .theme-toggle {
-  width:      28px;
-  height:     28px;
-  border:     1px solid var(--bg-border);
-  background: transparent;
-  color:      var(--text-muted);
-  cursor:     pointer;
-  font-size:  14px;
-  display:    flex;
-  align-items:     center;
-  justify-content: center;
-  transition: border-color $t-fast, color $t-fast;
+    width:      28px;
+    height:     28px;
+    border:     1px solid var(--bg-border);
+    background: transparent;
+    color:      var(--text-muted);
+    cursor:     pointer;
+    font-size:  14px;
+    display:    flex;
+    align-items:     center;
+    justify-content: center;
+    transition: border-color $t-fast, color $t-fast;
 
-  &:hover {
-    border-color: var(--accent-border);
-    color:        var(--accent);
+    &:hover {
+      border-color: var(--accent-border);
+      color:        var(--accent);
+    }
   }
-}
 }

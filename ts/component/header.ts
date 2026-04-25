@@ -17,11 +17,13 @@ const Header: Page = new Page(async (): Promise<string> => {
 			<a href="/projects"><li>${textContent.projects[lang]}</li></a>
 			<a href="/contact"><li>${textContent.contact[lang]}</li></a>
 		</ul>
-		<button class="theme-toggle" id="theme-toggle">◑</button>
-		<select id="lang-select">
-			<option value="fr" ${lang === "fr" ? "selected" : ""}>🇫🇷 FR</option>
-			<option value="en" ${lang === "en" ? "selected" : ""}>🇬🇧 EN</option></select>
-		</select>
+		<div class="nav-buttons">
+			<button class="theme-toggle" id="theme-toggle">◑</button>
+			<select id="lang-select">
+				<option value="fr" ${lang === "fr" ? "selected" : ""}>🇫🇷 FR</option>
+				<option value="en" ${lang === "en" ? "selected" : ""}>🇬🇧 EN</option></select>
+			</select>
+		</div>
 	</header>
 	`;
 });
